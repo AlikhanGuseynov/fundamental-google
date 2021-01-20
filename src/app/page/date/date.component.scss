@@ -56,7 +56,7 @@
   background: linear-gradient(327.46deg, #54AAD9 -144.44%, #45B585 158.83%);
   border-radius: 15px;
   height: 100%;
-  width: 100%;
+  width: 50%;
 }
 
 .progress-bar-item-wrapper {
@@ -92,82 +92,95 @@
   margin: 0 auto;
 }
 
-// ----------------
+// --------
 
-.inputs-list {
-  margin-top: 54px;
+.date-list {
+  max-width: 350px;
+  overflow-y: scroll;
+  margin: 0 auto;
+  z-index: 0;
+  scroll-behavior: smooth;
 }
 
-.input {
+.date-list::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.date-list::-webkit-scrollbar {
+  width: 0;
+  background-color: transparent;
+}
+
+.date-list::-webkit-scrollbar-thumb {
+  border-radius: 40px;
+  background: transparent;
+}
+
+.date-picker-container {
+  margin-bottom: 100px;
+  margin-top: 54px;
+  width: min-content;
+}
+
+.date-item {
+  min-width: 48px;
+  width: 48px;
+  height: 70px;
+  border-radius: 24px;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 120%;
+  text-align: center;
+  color: #3A4151;
+  border: 1.5px solid #EFEFEF;
+  box-sizing: border-box;
+  margin: 0 11px;
+  cursor: pointer;
+
+  &.active {
+    background: #FEA520;
+    color: #FFFFFF;
+  }
+
+  .date-item-text {
+    font-weight: 500;
+    font-size: 11px;
+  }
+
+  .date-item-number {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 9px;
+  }
+}
+
+.nav-btn {
+  padding-bottom: 13px;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+}
+
+.time-list {
+  width: 500px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.time-item {
+  max-width: 150px;
   width: 100%;
-  height: 54px;
+  height: 42px;
   background: #FFFFFF;
   border: 1.5px solid #EFEFEF;
   box-sizing: border-box;
   border-radius: 45px;
-  margin-bottom: 18px;
-  padding-left: 24px;
-  font-size: 15px;
-  line-height: 100%;
-  color: #3A4151;
+  margin: 7px;
+  cursor: pointer;
 
-  &::placeholder {
-    color: #6B717D;
+  &.active {
+    background: #FEA520;
+    color: #fff;
   }
 }
-
-.double-input {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 18px;
-}
-
-.checkbox-label {
-  margin-left: 24px;
-  width: 200px;
-}
-
-.checkbox {
-  display: none;
-}
-
-.check-marker {
-  width: 18px;
-  height: 18px;
-  border: 1.5px solid #DCDDDE;
-  border-radius: 4px;
-  margin-right: 10px;
-
-  img {
-    display: none;
-  }
-}
-
-.checkbox:checked + .check-marker {
-  background: linear-gradient(327.46deg, #54AAD9 -144.44%, #45B585 158.83%);
-
-  img {
-    display: block;
-  }
-}
-
-.footer {
-  margin-top: 100px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

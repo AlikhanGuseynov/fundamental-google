@@ -68,6 +68,10 @@ app-mobile-nav-menu {
     opacity: 1;
     height: 48px;
   }
+
+  &:hover {
+    background: #f6a122;
+  }
 }
 
 .call-us {
@@ -125,23 +129,32 @@ app-mobile-nav-menu {
   margin-top: 36px;
 }
 
-.price-block {
+.price-block-wrapper{
   background: radial-gradient(95.93% 113.74% at 4.07% 113.74%, rgba(255, 255, 255, 0.2975) 0%, rgba(255, 255, 255, 0.034) 100%);
-  backdrop-filter: blur(12px);
+  padding: 2px;
+  margin: 55px auto 54px;
   border-radius: 24px;
+  overflow: hidden;
+  width: 330px;
+  height: 240px;
+}
+
+.price-block {
   display: block;
-  margin: 55px auto 0;
-  width: min-content;
-  padding: 0 67px;
+  border-radius: 24px;
+  backdrop-filter: blur(12px);
+  color: #FFFFFF;
+  width: 100%;
+  height: 100%;
 }
 
 .price-block-price {
   font-weight: 600;
   font-size: 110px;
-  line-height: 165px;
+  padding: 0 67px;
   text-align: center;
   letter-spacing: -0.05em;
-  color: #FFFFFF;
+
 }
 
 .price-block-title {
@@ -151,7 +164,6 @@ app-mobile-nav-menu {
   text-align: center;
   letter-spacing: 0.06em;
   color: #FFFFFF;
-  margin-bottom: 15px;
 }
 
 .price-block-subtitle {
@@ -161,8 +173,6 @@ app-mobile-nav-menu {
   text-align: center;
   letter-spacing: 0.03em;
   color: #FFFFFF;
-  padding-bottom: 20px;
-  margin-bottom: 54px;
 }
 
 .book-btn {
@@ -177,6 +187,10 @@ app-mobile-nav-menu {
   margin: 0 auto 12px;
   display: block;
   cursor: pointer;
+
+  &:hover {
+    background: #f6a122;
+  }
 }
 
 .phone-number-mobile-view {
@@ -628,6 +642,7 @@ app-mobile-nav-menu {
 @media (max-width: 576px) {
   .header {
     height: 54px;
+    border-bottom: 1px solid #9CA0A8;
   }
   .header-container {
     position: fixed;

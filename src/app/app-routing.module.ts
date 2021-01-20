@@ -8,6 +8,7 @@ import {IssueInDetailComponent} from './page/issue-in-detail/issue-in-detail.com
 import {AddressComponent} from './page/address/address.component';
 import {ContactInfoComponent} from './page/contact-info/contact-info.component';
 import {SuccessfulConfirmationComponent} from './page/successful-confirmation/successful-confirmation.component';
+import {DateComponent} from './page/date/date.component';
 
 const routes: Routes = [
   {path: '', component: MainComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'issue-in-detail', component: IssueInDetailComponent},
   {path: 'address', component: AddressComponent},
   {path: 'contact-info', component: ContactInfoComponent},
+  {path: 'date', component: DateComponent},
   {path: 'successful-confirmation', component: SuccessfulConfirmationComponent},
 ];
 

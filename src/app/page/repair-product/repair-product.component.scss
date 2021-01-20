@@ -145,31 +145,64 @@
   margin-top: 54px;
 }
 
-// ---------
 
-.footer {
-  box-shadow: 0px -5px 25px rgba(0, 0, 0, 0.05);
-  height: 140px;
-}
+// media-items
 
-.disabled {
-  background: #EFEFEF;
-  color: #C4C6CA;
-  border: none;
-}
-
-.footer-btn-back {
-  min-width: 144px;
-  height: 42px;
-  border: 1.5px solid #3A4151;
-  box-sizing: border-box;
-  border-radius: 9px;
-
-  &:disabled {
-    @extend .disabled;
+@media (max-width: 992px) {
+  .appliances-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .width {
+    width: 650px;
+  }
+  .progress-bar{
+    width: 600px;
   }
 }
 
+@media (max-width: 650px) {
+  .width {
+    width: 560px;
+  }
+  .appliance-card {
+    width: 110px;
+  }
+  .appliances-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .progress-bar {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .appliances-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .width{
+    width: 95%;
+  }
+}
+
+@media (max-width: 576px) {
+  .appliances-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .appliance-card {
+    width: 104px;
+  }
+  .width{
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .appliances-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 
 

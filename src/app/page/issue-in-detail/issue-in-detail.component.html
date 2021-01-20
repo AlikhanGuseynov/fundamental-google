@@ -35,62 +35,8 @@
   Pick an arrival time that suite you
 </p>
 
-<div class="date-picker-container width flex align-items-center">
 
-  <button class="btn nav-btn center" (click)="navClick(-1)">
-    <img src="assets/img/icon/prev-arrow.svg" alt="">
-  </button>
 
-  <ul #dateListEl class="date-list flex">
-
-    <li
-      [id]="getCurrentDate(day)? 'toDay' : null"
-      *ngFor="let day of dateList"
-      class="date-item flex-column justify-content-center"
-      [ngClass]="{'active' : checkActive(day) }"
-      (click)="selectedDate = day"
-    >
-
-      <ng-container *ngIf="getCurrentDate(day)">
-        <p class="date-item-text">
-          Today
-        </p>
-      </ng-container>
-
-      <ng-container *ngIf="!getCurrentDate(day)">
-        <p class="date-item-number">
-          {{day.getDate()}}
-        </p>
-        <p class="date-item-text">
-          {{week[day.getDay()]}}
-        </p>
-      </ng-container>
-
-    </li>
-  </ul>
-
-  <button class="btn nav-btn center" (click)="navClick(1)">
-    <img src="assets/img/icon/next-arrow.svg" alt="">
-  </button>
-
-</div>
-
-<div class="time-list-container width">
-
-  <ul class="time-list flex">
-
-    <li
-      *ngFor="let item of timeList"
-      [ngClass]="{'active' : activeTime.id === item.id}"
-      class="time-item center"
-      (click)="activeTime = item"
-    >
-      {{item.time}}
-    </li>
-
-  </ul>
-
-</div>
 
 <footer class="footer center">
   <button class="btn footer-btn-back">Back</button>
