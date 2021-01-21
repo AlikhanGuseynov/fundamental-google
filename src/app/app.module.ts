@@ -18,6 +18,7 @@ import { AddressComponent } from './page/address/address.component';
 import { ContactInfoComponent } from './page/contact-info/contact-info.component';
 import { SuccessfulConfirmationComponent } from './page/successful-confirmation/successful-confirmation.component';
 import { DateComponent } from './page/date/date.component';
+import { RepairProductSecondComponent } from './page/repair-product-second/repair-product-second.component';
 
 export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -36,7 +37,8 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
     AddressComponent,
     ContactInfoComponent,
     SuccessfulConfirmationComponent,
-    DateComponent
+    DateComponent,
+    RepairProductSecondComponent
   ],
   imports: [
     BrowserModule,

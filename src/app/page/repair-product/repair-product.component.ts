@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-repair-product',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RepairProductComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {
+  }
 
   ngOnInit(): void {
   }
 
+  goTo(type?: string): void {
+    if (type === 'refrigerator' || type === 'washer' || type === 'drier' || type === 'oven') {
+      this.router.navigate(['product-next', type]);
+    }else{
+      this.router.navigate(['problem-type', type]);
+    }
+  }
 }

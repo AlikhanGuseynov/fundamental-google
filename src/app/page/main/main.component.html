@@ -1,7 +1,7 @@
 <div class="header-container">
   <button class="btn mobile-other-header flex align-items-center" #otherHeader>
     <img src="assets/img/icon/mob-view-phone-icon.svg" style="width: 14px" alt="">
-    <span>(408) 708 31 44</span>
+    <span [translate]="'MAIN.phone_number'">(408) 708 31 44</span>
   </button>
   <header class="header flex align-items-center justify-content-between">
 
@@ -24,18 +24,19 @@
 
     <div class="flex align-items-center">
 
-      <button #bookHeader class="btn book-btn-header" [routerLink]="'/product'" [translate]="'Main.title'">
+      <button #bookHeader class="btn book-btn-header" [routerLink]="'/product'"
+              [translate]="'MAIN.book_an_appointment'">
         BOOK AN APPOINTMENT
       </button>
 
       <div class="header-mobile-view-item">
         <div class="flex">
           <img class="phone-icon" src="assets/img/icon/phone.svg" alt="">
-          <p class="call-us">
+          <p class="call-us" [translate]="'MAIN.call_us_now'">
             CAll us now
           </p>
         </div>
-        <p class="phone-number">
+        <p class="phone-number" [translate]="'MAIN.phone_number'">
           (408) 708 31 44
         </p>
       </div>
@@ -51,29 +52,25 @@
 
 <div (scroll)="scroll($event)" class="page">
 
-  <section (scroll)="scroll($event)" class="main-block">
+  <section (scroll)="scroll($event)" class="main-block flex-column justify-content-around">
+
+    <h1 class="main-title" [translate]="'MAIN.title'">
+      Are you looking to get some assistance with your appliance repair?
+    </h1>
+    <p class="main-subtitle" [translate]="'MAIN.subtitle'">
+      Our team of qualified Technicians is ready to fix your appliance
+    </p>
 
     <div>
-      <h1 class="main-title">
-        Are you looking to get some assistance with your appliance repair?
-      </h1>
-      <p class="main-subtitle">
-        Our team of qualified Technicians is ready to fix your appliance
-      </p>
-
-    </div>
-
-    <div>
-
       <div class="price-block-wrapper">
-        <div class="price-block">
-          <p class="price-block-price">
+        <div class="price-block flex-column justify-content-around">
+          <p class="price-block-price" [translate]="'MAIN.price'">
             $59
           </p>
-          <p class="price-block-title">
+          <p class="price-block-title" [translate]="'MAIN.price_title'">
             SERVICE CALLS
           </p>
-          <p class="price-block-subtitle">
+          <p class="price-block-subtitle" [translate]="'MAIN.price_subtitle'">
             No service call charge
             with a repair
           </p>
@@ -82,28 +79,27 @@
 
       <button #phoneNumberBtn class="btn phone-number-mobile-view flex justify-content-center align-items-center">
         <img src="assets/img/icon/mob-view-phone-icon.svg" alt="">
-        <p>(408) 708 31 44</p>
+        <p [translate]="'MAIN.phone_number'">(408) 708 31 44</p>
       </button>
-
     </div>
 
 
     <div>
-
-
-      <button #bookAppointmentMain class="btn book-btn" [routerLink]="'/product'">
+      <button #bookAppointmentMain class="btn book-btn" [routerLink]="'/product'"
+              [translate]="'MAIN.book_an_appointment'">
         BOOK AN APPOINTMENT
       </button>
 
-      <p class="work-time">
+      <p class="work-time" [translate]="'MAIN.work_time'">
         MON - SAT 8:00am - 7:00pm
       </p>
     </div>
 
+
   </section>
 
   <section class="how-it-works">
-    <p class="title how-it-works-title">
+    <p class="title how-it-works-title" [translate]="'MAIN_HOW_IT_WORK.title'">
       How It Works
     </p>
 
@@ -114,10 +110,10 @@
           <div class="card-number center">
             1
           </div>
-          <p class="card-title">
+          <p class="card-title" [translate]="'MAIN_HOW_IT_WORK.item_title_1'">
             Pick a Time
           </p>
-          <p class="card-text">
+          <p class="card-text" [translate]="'MAIN_HOW_IT_WORK.item_text_1'">
             Select the day and time for your service and describe the issue.
           </p>
         </div>
@@ -128,10 +124,10 @@
           <div class="card-number center">
             2
           </div>
-          <p class="card-title">
+          <p class="card-title" [translate]="'MAIN_HOW_IT_WORK.item_title_2'">
             Pro estimate
           </p>
-          <p class="card-text">
+          <p class="card-text" [translate]="'MAIN_HOW_IT_WORK.item_text_2'">
             Our experienced and fully-equipped Pro will come and estimate the issue.
           </p>
         </div>
@@ -142,10 +138,10 @@
           <div class="card-number center">
             3
           </div>
-          <p class="card-title">
+          <p class="card-title" [translate]="'MAIN_HOW_IT_WORK.item_title_3'">
             Pay after work
           </p>
-          <p class="card-text">
+          <p class="card-text" [translate]="'MAIN_HOW_IT_WORK.item_text_3'">
             Once the Pro completes the work you pay for service and get our Guarantee.
           </p>
         </div>
@@ -155,7 +151,7 @@
   </section>
 
   <section class="reasons">
-    <p class="title reasons-title">
+    <p class="title reasons-title" [translate]="'MAIN_REASONS.title'">
       Several reasons to trust us
     </p>
 
@@ -165,10 +161,10 @@
         <div class="reason-img-cover flex align-items-center ">
           <img src="assets/img/icon/high.svg" alt="">
         </div>
-        <p class="reason-item-title">
+        <p class="reason-item-title" [translate]="'MAIN_REASONS.item_title_1'">
           High quality
         </p>
-        <p class="reason-item-subtitle">
+        <p class="reason-item-subtitle" [translate]="'MAIN_REASONS.item_subtitle_1'">
           appliance service
         </p>
       </li>
@@ -177,10 +173,10 @@
         <div class="reason-img-cover flex align-items-center">
           <img src="assets/img/icon/quick.svg" alt="">
         </div>
-        <p class="reason-item-title">
+        <p class="reason-item-title" [translate]="'MAIN_REASONS.item_title_2'">
           QUICK WORK
         </p>
-        <p class="reason-item-subtitle">
+        <p class="reason-item-subtitle" [translate]="'MAIN_REASONS.item_subtitle_2'">
           as possible
         </p>
       </li>
@@ -189,10 +185,10 @@
         <div class="reason-img-cover flex align-items-center">
           <img src="assets/img/icon/licensed.svg" alt="">
         </div>
-        <p class="reason-item-title">
+        <p class="reason-item-title" [translate]="'MAIN_REASONS.item_title_3'">
           licensed experts
         </p>
-        <p class="reason-item-subtitle">
+        <p class="reason-item-subtitle" [translate]="'MAIN_REASONS.item_subtitle_3'">
           in our team
         </p>
       </li>
@@ -201,10 +197,10 @@
         <div class="reason-img-cover flex align-items-center">
           <img src="assets/img/icon/lowest.svg" alt="">
         </div>
-        <p class="reason-item-title">
+        <p class="reason-item-title" [translate]="'MAIN_REASONS.item_title_4'">
           lowest prices
         </p>
-        <p class="reason-item-subtitle">
+        <p class="reason-item-subtitle" [translate]="'MAIN_REASONS.item_subtitle_4'">
           $59 service call
         </p>
       </li>
@@ -213,10 +209,10 @@
         <div class="reason-img-cover flex align-items-center">
           <img src="assets/img/icon/repair.svg" alt="">
         </div>
-        <p class="reason-item-title">
+        <p class="reason-item-title" [translate]="'MAIN_REASONS.item_title_5'">
           repair warranty
         </p>
-        <p class="reason-item-subtitle">
+        <p class="reason-item-subtitle" [translate]="'MAIN_REASONS.item_subtitle_5'">
           3 months
         </p>
       </li>
@@ -225,399 +221,105 @@
   </section>
 
   <section class="appliances">
-    <p class="title appliances-title">
+    <p class="title appliances-title" [translate]="'MAIN_APPLIANCES.title'">
       Appliances we service
     </p>
     <ul class="appliances-list custom-width flex">
 
-      <li class="appliance-card" (click)="goTo()">
+      <li class="appliance-card" (click)="goTo('refrigerator')">
         <div class="appliance-card-img-wrapper">
-          <!--      <img src="" alt="">-->
-          <svg class="appliance-img" width="30" height="43" viewBox="0 0 30 43" fill="none"
-               xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M26.2 39H3.8C2.21333 39 1 37.9022 1 36.4667V3.53333C1 2.09778 2.21333 1 3.8 1H26.2C27.7867 1 29 2.09778 29 3.53333V36.4667C29 37.8178 27.7867 39 26.2 39Z"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path d="M1 15H29" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path d="M7 7V23" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path d="M25 39V41.5" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path d="M5 39V41.5" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-          </svg>
+          <img src="assets/img/icon/refrigirator.svg" alt="" class="appliance-img black">
+          <img src="assets/img/icon/refrigirator-white.svg" alt="" class="appliance-img white">
         </div>
-        <p class="appliance-title">Refrigirator Repair</p>
+        <p class="appliance-title" [translate]="'MAIN_APPLIANCES.refrigirator'">Refrigirator Repair</p>
       </li>
 
-      <li class="appliance-card" (click)="goTo()">
+      <li class="appliance-card" (click)="goTo('washer')">
         <div class="appliance-card-img-wrapper">
-          <!--      <img src="" alt="">-->
-          <svg class="appliance-img" width="36" height="38" viewBox="0 0 36 38" fill="none"
-               xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 10H35" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path d="M19 5.5H23" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path
-              d="M28.75 7.25C29.7165 7.25 30.5 6.4665 30.5 5.5C30.5 4.5335 29.7165 3.75 28.75 3.75C27.7835 3.75 27 4.5335 27 5.5C27 6.4665 27.7835 7.25 28.75 7.25Z"
-              fill="#3A4151"/>
-            <path
-              d="M32.1667 37H3.83333C2.22778 37 1 35.752 1 34.12V3.88C1 2.248 2.22778 1 3.83333 1H32.1667C33.7722 1 35 2.248 35 3.88V34.12C35 35.656 33.6778 37 32.1667 37Z"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path
-              d="M18.5 32C23.1944 32 27 28.1944 27 23.5C27 18.8056 23.1944 15 18.5 15C13.8056 15 10 18.8056 10 23.5C10 28.1944 13.8056 32 18.5 32Z"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path
-              d="M27 23.5435C25.9149 23.0217 24.9202 22.5 22.75 22.5C18.5 22.5 18.5 24.5 14.25 24.5C12.1702 24.5 11.0851 23.9783 10 23.4565"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-          </svg>
+          <img src="assets/img/icon/washer.svg" alt="" class="appliance-img black">
+          <img src="assets/img/icon/washer-white.svg" alt="" class="appliance-img white">
         </div>
-        <p class="appliance-title">Washer Repair</p>
+        <p class="appliance-title" [translate]="'MAIN_APPLIANCES.washer'">Washer Repair</p>
       </li>
 
-      <li class="appliance-card" (click)="goTo()">
+      <li class="appliance-card" (click)="goTo('dishwasher')">
         <div class="appliance-card-img-wrapper">
-          <!--      <img src="assets/img/icon/dishwasher.svg" alt="" class="appliance-img">-->
-          <svg class="appliance-img" width="36" height="38" viewBox="0 0 36 38" fill="none"
-               xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M32.1667 37H3.83333C2.22778 37 1 35.752 1 34.12V3.88C1 2.248 2.22778 1 3.83333 1H32.1667C33.7722 1 35 2.248 35 3.88V34.12C35 35.656 33.7722 37 32.1667 37Z"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path d="M1 10H35" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path
-              d="M11.9556 17.0555C13.0889 16.4889 14.3167 16.1111 15.6389 16.1111C19.9833 16.1111 23.4778 19.6055 23.4778 23.8555C23.4778 28.2 19.9833 31.6944 15.6389 31.6944C11.2945 31.6944 7.8 28.2 7.8 23.8555C7.8 23.1944 7.81113 22.6611 8.00002 22"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path
-              d="M13.0889 19.5111C13.0889 21.2111 11.6722 22.6278 9.97225 22.6278C8.27225 22.6278 6.85558 21.2111 6.85558 19.5111C6.85558 17.8111 9.97225 14.6945 9.97225 14.6945C9.97225 14.6945 13.0889 17.8111 13.0889 19.5111Z"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path
-              d="M18.4722 31.1278C19.3222 31.5055 20.3611 31.6944 21.3056 31.6944C25.65 31.6944 29.1444 28.2 29.1444 23.8555C29.1444 19.5111 25.65 16.1111 21.3056 16.1111C20.2667 16.1111 19.3222 16.3 18.4722 16.6778"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path d="M19 5.5H23" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path
-              d="M28.75 7.25C29.7165 7.25 30.5 6.4665 30.5 5.5C30.5 4.5335 29.7165 3.75 28.75 3.75C27.7835 3.75 27 4.5335 27 5.5C27 6.4665 27.7835 7.25 28.75 7.25Z"
-              fill="#3A4151"/>
-          </svg>
+          <img src="assets/img/icon/dishwasher.svg" alt="" class="appliance-img black">
+          <img src="assets/img/icon/dishwasher-white.svg" alt="" class="appliance-img white">
         </div>
-        <p class="appliance-title">Dishwasher Repair</p>
+        <p class="appliance-title" [translate]="'MAIN_APPLIANCES.dishwasher '">Dishwasher Repair</p>
       </li>
 
-      <li class="appliance-card" (click)="goTo()">
+      <li class="appliance-card" (click)="goTo('drier')">
         <div class="appliance-card-img-wrapper">
-          <!--      <img src="assets/img/icon/drier.svg" alt="" class="appliance-img">-->
-          <svg class="appliance-img" width="36" height="38" viewBox="0 0 36 38" fill="none"
-               xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M32.1667 37H3.83333C2.22778 37 1 35.752 1 34.12V3.88C1 2.248 2.22778 1 3.83333 1H32.1667C33.7722 1 35 2.248 35 3.88V34.12C35 35.752 33.6778 37 32.1667 37Z"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path d="M1 7H35" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path
-              d="M18 32C23.5228 32 28 27.5229 28 22C28 16.4772 23.5228 12 18 12C12.4772 12 8 16.4772 8 22C8 27.5229 12.4772 32 18 32Z"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path
-              d="M18 16.1111C17.6222 16.7722 17.2445 17.5278 17.2445 18.9444C17.2445 21.7778 18.6611 21.7778 18.6611 24.6111C18.6611 26.0278 18.2834 26.7833 17.9056 27.4444"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path
-              d="M13.4667 17.0555C13.1833 17.6111 12.9 18.2592 12.9 19.3704C12.9 21.7778 14.1278 21.7778 14.1278 24.0926C14.1278 25.2963 13.8445 25.8518 13.5611 26.5"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path
-              d="M22.6278 17.0555C22.3445 17.6111 22.0611 18.2592 22.0611 19.3704C22.0611 21.7778 23.2889 21.7778 23.2889 24.0926C23.2889 25.2963 23.0056 25.8518 22.7222 26.5"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-          </svg>
+          <img src="assets/img/icon/drier.svg" alt="" class="appliance-img black">
+          <img src="assets/img/icon/drier-white.svg" alt="" class="appliance-img white">
         </div>
-        <p class="appliance-title">Drier Repair</p>
+        <p class="appliance-title" [translate]="'MAIN_APPLIANCES.drier'">Drier Repair</p>
       </li>
 
-      <li class="appliance-card" (click)="goTo()">
+      <li class="appliance-card" (click)="goTo('oven')">
         <div class="appliance-card-img-wrapper">
-          <!--      <img src="assets/img/icon/oven.svg" alt="" class="appliance-img">-->
-          <svg class="appliance-img" width="36" height="40" viewBox="0 0 36 40" fill="none"
-               xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 31.4111H35" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path
-              d="M7 8.18334C7.96649 8.18334 8.75 7.39984 8.75 6.43334C8.75 5.46684 7.96649 4.68334 7 4.68334C6.0335 4.68334 5.25 5.46684 5.25 6.43334C5.25 7.39984 6.0335 8.18334 7 8.18334Z"
-              fill="#3A4151"/>
-            <path
-              d="M13.4224 8.18334C14.3889 8.18334 15.1724 7.39984 15.1724 6.43334C15.1724 5.46684 14.3889 4.68334 13.4224 4.68334C12.4559 4.68334 11.6724 5.46684 11.6724 6.43334C11.6724 7.39984 12.4559 8.18334 13.4224 8.18334Z"
-              fill="#3A4151"/>
-            <path
-              d="M19.75 8.18334C20.7165 8.18334 21.5 7.39984 21.5 6.43334C21.5 5.46684 20.7165 4.68334 19.75 4.68334C18.7835 4.68334 18 5.46684 18 6.43334C18 7.39984 18.7835 8.18334 19.75 8.18334Z"
-              fill="#3A4151"/>
-            <path
-              d="M32.1667 36.4167H3.83333C2.22778 36.4167 1 35.1889 1 33.5833V3.83333C1 2.22778 2.22778 1 3.83333 1H32.1667C33.7722 1 35 2.22778 35 3.83333V33.5833C35 35.1889 33.7722 36.4167 32.1667 36.4167Z"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path
-              d="M30.2777 31.4111H5.72217V14.5056C5.72217 12.9 6.90447 11.6722 8.45056 11.6722H27.5493C29.0954 11.6722 30.2777 12.9 30.2777 14.5056V31.4111Z"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path d="M30.75 36.4167V38.9167" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10"
-                  stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M5.25 36.4167V38.9167" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10"
-                  stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M13.0889 16.5833H23.0055" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10"
-                  stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          <img src="assets/img/icon/oven.svg" alt="" class="appliance-img black">
+          <img src="assets/img/icon/oven-white.svg" alt="" class="appliance-img white">
         </div>
-        <p class="appliance-title">Oven Repair</p>
+        <p class="appliance-title" [translate]="'MAIN_APPLIANCES.oven'">Oven Repair</p>
       </li>
 
-      <li class="appliance-card" (click)="goTo()">
+      <li class="appliance-card" (click)="goTo('appliance')">
         <div class="appliance-card-img-wrapper">
-          <!--      <img src="assets/img/icon/appliance.svg" alt="" class="appliance-img">-->
-          <svg class="appliance-img" width="40" height="40" viewBox="0 0 40 40" fill="none"
-               xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 13.8861H25" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path d="M17.2319 33.0743H22.8616" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10"
-                  stroke-linecap="round" stroke-linejoin="round"/>
-            <path
-              d="M32.4319 39H7.56774C5.97268 39 4.75293 37.7772 4.75293 36.1782V29.5H35.2468V36.1782C35.2468 37.7772 34.027 39 32.4319 39Z"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path
-              d="M36.1852 29.5H3.81482C2.21975 29.5 1 28.2772 1 26.6782V20.0941C1 18.495 2.21975 17.2723 3.81482 17.2723H36.1852C37.7802 17.2723 39 18.495 39 20.0941V26.6782C39 28.2772 37.7802 29.5 36.1852 29.5Z"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path d="M32.9014 17.2723V29.5" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10"
-                  stroke-linecap="round" stroke-linejoin="round"/>
-            <path
-              d="M13.5727 4.19802C12.8221 2.31683 10.9456 1 8.88138 1C6.62953 1 4.75298 2.41089 4.09619 4.38614H8.22459C9.16286 4.38614 9.91348 5.13862 9.91348 6.07921C9.91348 7.0198 9.16286 7.77228 8.22459 7.77228H4.09619C4.75298 9.74753 6.72336 11.1584 8.88138 11.1584C11.0394 11.1584 12.916 9.84159 13.5727 7.9604H26.4271C27.1777 9.84159 29.0542 11.1584 31.1184 11.1584C33.3703 11.1584 35.2468 9.74753 35.9036 7.77228H31.7752C30.8369 7.77228 30.0863 7.0198 30.0863 6.07921C30.0863 5.13862 30.8369 4.38614 31.7752 4.38614H35.9036C35.2468 2.41089 33.3703 1 31.1184 1C28.9604 1 27.0839 2.31683 26.4271 4.19802H13.5727Z"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path d="M7.09863 17.2723V29.5" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10"
-                  stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          <img src="assets/img/icon/appliance.svg" alt="" class="appliance-img black">
+          <img src="assets/img/icon/appliance-white.svg" alt="" class="appliance-img white">
         </div>
-        <p class="appliance-title">Appliance Instalation</p>
+        <p class="appliance-title" [translate]="'MAIN_APPLIANCES.appliance_instalation'">Appliance Instalation</p>
       </li>
 
-      <li class="appliance-card" (click)="goTo()">
+      <li class="appliance-card" (click)="goTo('range')">
         <div class="appliance-card-img-wrapper">
-          <!--      <img src="assets/img/icon/range.svg" alt="" class="appliance-img">-->
-          <svg class="appliance-img" width="36" height="42" viewBox="0 0 36 42" fill="none"
-               xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M9.75 11.5C10.7165 11.5 11.5 10.7165 11.5 9.75C11.5 8.7835 10.7165 8 9.75 8C8.7835 8 8 8.7835 8 9.75C8 10.7165 8.7835 11.5 9.75 11.5Z"
-              fill="#3A4151"/>
-            <path
-              d="M25.75 11.5C26.7165 11.5 27.5 10.7165 27.5 9.75C27.5 8.7835 26.7165 8 25.75 8C24.7835 8 24 8.7835 24 9.75C24 10.7165 24.7835 11.5 25.75 11.5Z"
-              fill="#3A4151"/>
-            <path
-              d="M32.1667 41H3.83333C2.22778 41 1 39.752 1 38.12V7.88C1 6.248 2.22778 5 3.83333 5H32.1667C33.7722 5 35 6.248 35 7.88V38.12C35 39.656 33.7722 41 32.1667 41Z"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path
-              d="M27.2554 36.4167H8.8387C7.23315 36.4167 6.00537 35.0773 6.00537 33.3257V22.5076C6.00537 20.7561 7.23315 19.4167 8.8387 19.4167H27.2554C28.8609 19.4167 30.0887 20.7561 30.0887 22.5076V33.3257C30.0887 35.0773 28.7665 36.4167 27.2554 36.4167Z"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path d="M1 14H35" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path d="M7 1H12" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path d="M23 1H28" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-          </svg>
+          <img src="assets/img/icon/range.svg" alt="" class="appliance-img black">
+          <img src="assets/img/icon/range-white.svg" alt="" class="appliance-img white">
         </div>
-        <p class="appliance-title">Range & Stove</p>
+        <p class="appliance-title" [translate]="'MAIN_APPLIANCES.range'">Range & Stove</p>
       </li>
 
-      <li class="appliance-card" (click)="goTo()">
+      <li class="appliance-card" (click)="goTo('trash')">
         <div class="appliance-card-img-wrapper">
-          <!--      <img src="assets/img/icon/trash.svg" alt="" class="appliance-img">-->
-          <svg class="appliance-img" width="34" height="45" viewBox="0 0 34 45" fill="none"
-               xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M27.6898 4.73334H6.31061C5.20953 4.73334 4.2002 5.66088 4.2002 6.86667V38.8667C4.2002 39.9797 5.11777 41 6.31061 41H27.6898C28.7909 41 29.8002 40.0725 29.8002 38.8667V6.86667C29.8002 5.66088 28.8826 4.73334 27.6898 4.73334Z"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path d="M12.7334 1H21.2667" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path d="M1 10.0667H33" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path d="M10.6001 35.6667H23.4001" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10"
-                  stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8.4668 41V43.6667" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path d="M25.5332 41V43.6667" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path d="M12.7378 19.8856L14.3215 17.2771C15.4394 15.414 18.0478 15.414 19.1657 17.2771L20.2836 19.2335"
-                  stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path d="M10.4093 23.8914L9.38452 25.6614C8.26662 27.5246 9.664 29.8536 11.8067 29.8536H14.4151"
-                  stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path d="M22.6128 23.2393L24.1033 25.7546C25.2212 27.6178 23.8238 29.9467 21.6812 29.9467H18.6069"
-                  stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path
-              d="M10.7818 23.4256C10.875 23.4256 11.0613 23.4256 11.1545 23.3325L13.4834 22.0282C13.9492 21.7488 13.9492 21.0966 13.4834 20.8172L12.645 20.3514L11.1545 19.513C10.6887 19.2335 10.1297 19.6061 10.1297 20.0719V22.7735C10.0366 23.053 10.4092 23.4256 10.7818 23.4256Z"
-              stroke="#3A4151" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path
-              d="M23.0787 20.5377L21.495 19.6061C20.8429 19.2335 20.0977 19.6993 20.0977 20.4445V22.3077C20.0977 23.053 20.8429 23.5188 21.495 23.1461L23.0787 22.2146C23.7309 21.7488 23.7309 20.9103 23.0787 20.5377Z"
-              stroke="#3A4151" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path
-              d="M17.8619 29.1083L16.2782 28.1767C15.6261 27.8041 14.8809 28.2699 14.8809 29.0151V30.8783C14.8809 31.6236 15.6261 32.0894 16.2782 31.7167L17.8619 30.7852C18.5141 30.3194 18.5141 29.4809 17.8619 29.1083Z"
-              stroke="#3A4151" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-          </svg>
+          <img src="assets/img/icon/trash.svg" alt="" class="appliance-img black">
+          <img src="assets/img/icon/trash-white.svg" alt="" class="appliance-img white">
         </div>
-        <p class="appliance-title">Trash Compactor</p>
+        <p class="appliance-title" [translate]="'MAIN_APPLIANCES.trash_compactor'">Trash Compactor</p>
       </li>
 
-      <li class="appliance-card" (click)="goTo()">
+      <li class="appliance-card" (click)="goTo('microwave')">
         <div class="appliance-card-img-wrapper">
-          <!--      <img src="assets/img/icon/microwave.svg" alt="" class="appliance-img">-->
-          <svg class="appliance-img" width="41" height="33" viewBox="0 0 41 33" fill="none"
-               xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M37.0603 29H3.9397C2.27387 29 1 27.7228 1 26.0526V3.94737C1 2.27719 2.27387 1 3.9397 1H37.0603C38.7261 1 40 2.27719 40 3.94737V26.0526C40 27.6246 38.7261 29 37.0603 29Z"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path d="M28 28.7839V1" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path d="M0.999999 9L28 9" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path d="M32.5 6H35.5" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path d="M32.5 10H35.5" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path
-              d="M34 18.5C34.9665 18.5 35.75 17.7165 35.75 16.75C35.75 15.7835 34.9665 15 34 15C33.0335 15 32.25 15.7835 32.25 16.75C32.25 17.7165 33.0335 18.5 34 18.5Z"
-              fill="#3A4151"/>
-            <path
-              d="M34 24.5C34.9665 24.5 35.75 23.7165 35.75 22.75C35.75 21.7835 34.9665 21 34 21C33.0335 21 32.25 21.7835 32.25 22.75C32.25 23.7165 33.0335 24.5 34 24.5Z"
-              fill="#3A4151"/>
-            <path d="M34 29V31.5" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path d="M6 29V31.5" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-          </svg>
+          <img src="assets/img/icon/microwave.svg" alt="" class="appliance-img black">
+          <img src="assets/img/icon/microwave-white.svg" alt="" class="appliance-img white">
         </div>
-        <p class="appliance-title">Microwave Repair</p>
+        <p class="appliance-title" [translate]="'MAIN_APPLIANCES.microwave_repair'">Microwave Repair</p>
       </li>
 
-      <li class="appliance-card" (click)="goTo()">
+      <li class="appliance-card" (click)="goTo('electric-appliance')">
         <div class="appliance-card-img-wrapper">
-          <!--      <img src="assets/img/icon/electric.svg" alt="" class="appliance-img">-->
-          <svg class="appliance-img" width="34" height="42" viewBox="0 0 34 42" fill="none"
-               xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 15H25" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path
-              d="M22.8712 15V20.1534C22.8712 23.8344 19.9264 26.7791 16.2454 26.7791C12.5644 26.7791 9.61963 23.8344 9.61963 20.1534V15"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path d="M20.2207 15V11" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path d="M12.3438 15V11" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path
-              d="M16.3022 21.5C17.2687 21.5 18.0522 20.7165 18.0522 19.75C18.0522 18.7835 17.2687 18 16.3022 18C15.3357 18 14.5522 18.7835 14.5522 19.75C14.5522 20.7165 15.3357 21.5 16.3022 21.5Z"
-              fill="#3A4151"/>
-            <path
-              d="M16.2456 27V30.9018C16.2456 32.7423 17.718 34.2147 19.5585 34.2147C21.399 34.2147 22.8714 32.7423 22.8714 30.9018C22.8714 29.3558 24.1229 28.1043 25.6689 28.1043C27.2149 28.1043 28.4665 29.3558 28.4665 30.9018V31.3436"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path
-              d="M17 41C16.5429 41 16.0857 40.9231 15.6286 40.6923C14.8667 40.3846 14.1048 40 13.4952 39.6923C5.8 35.5385 1 27.2308 1 18.0769V8.07692C1 6.92308 1.91429 6 3.05714 6H4.65714C10.8286 6 14.3333 2.76923 14.4857 2.61538L15.6286 1.53846C16.0095 1.23077 16.4667 1 17 1C17.5333 1 17.9905 1.23077 18.3714 1.53846L19.5143 2.61538C19.6667 2.76923 23.0952 5.92308 29.3429 5.92308H30.9429C32.0857 5.92308 33 6.84615 33 8V18C33 27.2308 28.2 35.4615 20.581 39.6154C19.8952 40 19.1333 40.3077 18.4476 40.6154C17.9143 40.9231 17.4571 41 17 41Z"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-          </svg>
+          <img src="assets/img/icon/electric.svg" alt="" class="appliance-img black">
+          <img src="assets/img/icon/electric-white.svg" alt="" class="appliance-img white">
         </div>
-        <p class="appliance-title">Electric Appliance Instalation</p>
+        <p class="appliance-title" [translate]="'MAIN_APPLIANCES.electric'">Electric Appliance Instalation</p>
       </li>
 
-      <li class="appliance-card" (click)="goTo()">
+      <li class="appliance-card" (click)="goTo('kitchen-hood')">
         <div class="appliance-card-img-wrapper">
-          <!--      <img src="assets/img/icon/kitchen.svg" alt="" class="appliance-img">-->
-          <svg class="appliance-img" width="42" height="34" viewBox="0 0 42 34" fill="none"
-               xmlns="http://www.w3.org/2000/svg">
-            <path d="M14.4167 12.1667L1 25.5833" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10"
-                  stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M41 25.5833L27.5 12.1667" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10"
-                  stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M41 25.5833H1V32.8334H41V25.5833Z" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10"
-                  stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M27.5 12.1667V1" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path d="M14.4165 12.1667V1" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path d="M18.5835 29.25H23.4168" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10"
-                  stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M27.6665 29.25H30.6665" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10"
-                  stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M11.25 29.25H14.3333" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10"
-                  stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M14.4165 12.1667H27.4998" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10"
-                  stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          <img src="assets/img/icon/kitchen.svg" alt="" class="appliance-img black">
+          <img src="assets/img/icon/kitchen-white.svg" alt="" class="appliance-img white">
         </div>
-        <p class="appliance-title">Kitchen Hood Repair</p>
+        <p class="appliance-title" [translate]="'MAIN_APPLIANCES.kitchen'">Kitchen Hood Repair</p>
       </li>
 
-      <li class="appliance-card" (click)="goTo()">
+      <li class="appliance-card" (click)="goTo('cooktop')">
         <div class="appliance-card-img-wrapper">
-          <!--      <img src="assets/img/icon/cooktop.svg" alt="" class="appliance-img">-->
-          <svg class="appliance-img" width="36" height="38" viewBox="0 0 36 38" fill="none"
-               xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M32.1667 37H3.83333C2.22778 37 1 35.752 1 34.12V3.88C1 2.248 2.22778 1 3.83333 1H32.1667C33.7722 1 35 2.248 35 3.88V34.12C35 35.656 33.6778 37 32.1667 37Z"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path d="M1 31.5H35" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path
-              d="M10.9167 26.9722C13.0552 26.9722 14.7889 25.2386 14.7889 23.1C14.7889 20.9614 13.0552 19.2278 10.9167 19.2278C8.77809 19.2278 7.04443 20.9614 7.04443 23.1C7.04443 25.2386 8.77809 26.9722 10.9167 26.9722Z"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path
-              d="M10.9165 13.5611C13.2637 13.5611 15.1665 11.6583 15.1665 9.31113C15.1665 6.96392 13.2637 5.06113 10.9165 5.06113C8.56929 5.06113 6.6665 6.96392 6.6665 9.31113C6.6665 11.6583 8.56929 13.5611 10.9165 13.5611Z"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path
-              d="M25.0835 27.35C27.4307 27.35 29.3335 25.4472 29.3335 23.1C29.3335 20.7528 27.4307 18.85 25.0835 18.85C22.7363 18.85 20.8335 20.7528 20.8335 23.1C20.8335 25.4472 22.7363 27.35 25.0835 27.35Z"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-            <path
-              d="M25.0832 24.5167C25.8656 24.5167 26.4998 23.8824 26.4998 23.1C26.4998 22.3176 25.8656 21.6833 25.0832 21.6833C24.3008 21.6833 23.6665 22.3176 23.6665 23.1C23.6665 23.8824 24.3008 24.5167 25.0832 24.5167Z"
-              fill="#3A4151"/>
-            <path
-              d="M10.9167 10.7278C11.6991 10.7278 12.3333 10.0935 12.3333 9.31111C12.3333 8.5287 11.6991 7.89444 10.9167 7.89444C10.1343 7.89444 9.5 8.5287 9.5 9.31111C9.5 10.0935 10.1343 10.7278 10.9167 10.7278Z"
-              fill="#3A4151"/>
-            <path
-              d="M25.0832 13.1833C27.2217 13.1833 28.9554 11.4497 28.9554 9.3111C28.9554 7.17253 27.2217 5.43887 25.0832 5.43887C22.9446 5.43887 21.2109 7.17253 21.2109 9.3111C21.2109 11.4497 22.9446 13.1833 25.0832 13.1833Z"
-              stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round"
-              stroke-linejoin="round"/>
-          </svg>
+          <img src="assets/img/icon/cooktop.svg" alt="" class="appliance-img black">
+          <img src="assets/img/icon/cooktop-white.svg" alt="" class="appliance-img white">
         </div>
-        <p class="appliance-title">Cooktop Repair</p>
+        <p class="appliance-title" [translate]="'MAIN_APPLIANCES.cooktop '">Cooktop Repair</p>
       </li>
 
     </ul>
@@ -626,7 +328,7 @@
 
   <section class="brand">
 
-    <p class="title brand-title">
+    <p class="title brand-title" [translate]="'MAIN_BRAND.title'">
       Brand we service
     </p>
 
@@ -639,28 +341,27 @@
       </ng-container>
 
     </ul>
-
   </section>
 
   <section class="result">
-    <p class="title result-title">
+    <p class="title result-title" [translate]="'MAIN_RESULTS.title'">
       Our Results
     </p>
 
     <ul class="result-list flex justify-content-center">
       <li class="result-item">
-        <p class="result-number">1500+</p>
-        <p class="result-item-text">HAPPY CUSTOMERS</p>
+        <p class="result-number" [translate]="'MAIN_RESULTS.item_happy_value'">1500+</p>
+        <p class="result-item-text" [translate]="'MAIN_RESULTS.item_happy'">HAPPY CUSTOMERS</p>
       </li>
 
       <li class="result-item">
-        <p class="result-number">1250+</p>
-        <p class="result-item-text">PARTS REPLACED</p>
+        <p class="result-number" [translate]="'MAIN_RESULTS.item_replaced_value'">1250+</p>
+        <p class="result-item-text" [translate]="'MAIN_RESULTS.item_replaced'">PARTS REPLACED</p>
       </li>
 
       <li class="result-item">
-        <p class="result-number">99%</p>
-        <p class="result-item-text">POSITIVE FEEDBACK</p>
+        <p class="result-number" [translate]="'MAIN_RESULTS.item_feedback_value'">99%</p>
+        <p class="result-item-text" [translate]="'MAIN_RESULTS.item_feedback'">POSITIVE FEEDBACK</p>
       </li>
     </ul>
 
@@ -668,7 +369,7 @@
 
   <section class="location">
     <!--  img.location-->
-    <p class="title location-title">
+    <p class="title location-title" [translate]="'MAIN_LOCATION.title'">
       Our locations
     </p>
 
@@ -703,7 +404,7 @@
     </div>
   </section>
 
-  <footer class="footer">
+  <footer class="main-footer">
 
     <div class="footer-row align-items-center custom-width">
 
@@ -711,7 +412,7 @@
 
       <div class="footer-right align-items-center love-us">
 
-        <p class="footer-titles">
+        <p class="footer-titles" [translate]="'MAIN_FOOTER.love_us'">
           People love us on:
         </p>
 
@@ -734,39 +435,39 @@
 
         <li class="contact-item flex align-items-center">
           <img src="assets/img/icon/footer-phone.svg" alt="">
-          <p class="footer-titles">(408) 708 31 44</p>
+          <p class="footer-titles" [translate]="'MAIN.phone_number'">(408) 708 31 44</p>
         </li>
 
         <li class="contact-item flex align-items-center">
           <img src="assets/img/icon/footer-email.svg" alt="">
-          <p class="footer-titles">info@fundamental.com</p>
+          <p class="footer-titles" [translate]="'MAIN_FOOTER.email'">info@fundamental.com</p>
         </li>
 
         <li class="contact-item flex align-items-center">
           <img src="assets/img/icon/footer-clock.svg" alt="">
-          <p class="footer-titles">MON - FRI 8:00am - 7 00pm</p>
+          <p class="footer-titles" [translate]="'MAIN.work_time'">MON - FRI 8:00am - 7 00pm</p>
         </li>
 
       </ul>
 
       <ul class="footer-right our-services-list">
 
-        <li class="our-services-title">
+        <li class="our-services-title" [translate]="'MAIN_FOOTER.our_services'">
           Our Services
         </li>
 
-        <li class="our-services-item">Refrigirator repair</li>
-        <li class="our-services-item">Washer repair</li>
-        <li class="our-services-item">Dishwasher repair</li>
-        <li class="our-services-item">Drier repair</li>
-        <li class="our-services-item">Oven repair</li>
-        <li class="our-services-item">Appliance instalation</li>
-        <li class="our-services-item">Range & Stove</li>
-        <li class="our-services-item">Trash compactor</li>
-        <li class="our-services-item">Trash compactor</li>
-        <li class="our-services-item">Electric appliance Instalation</li>
-        <li class="our-services-item">Kitchen hood repair</li>
-        <li class="our-services-item">Cooktop repair</li>
+        <li class="our-services-item" [translate]="'MAIN_APPLIANCES.refrigirator'">Refrigirator repair</li>
+        <li class="our-services-item" [translate]="'MAIN_APPLIANCES.washer'">Washer repair</li>
+        <li class="our-services-item" [translate]="'MAIN_APPLIANCES.dishwasher'">Dishwasher repair</li>
+        <li class="our-services-item" [translate]="'MAIN_APPLIANCES.drier'">Drier repair</li>
+        <li class="our-services-item" [translate]="'MAIN_APPLIANCES.oven'">Oven repair</li>
+        <li class="our-services-item" [translate]="'MAIN_APPLIANCES.appliance_instalation'">Appliance instalation</li>
+        <li class="our-services-item" [translate]="'MAIN_APPLIANCES.range'">Range & Stove</li>
+        <li class="our-services-item" [translate]="'MAIN_APPLIANCES.trash_compactor'">Trash compactor</li>
+        <li class="our-services-item" [translate]="''">Trash compactor</li>
+        <li class="our-services-item" [translate]="'MAIN_APPLIANCES.electric'">Electric appliance Instalation</li>
+        <li class="our-services-item" [translate]="'MAIN_APPLIANCES.kitchen'">Kitchen hood repair</li>
+        <li class="our-services-item" [translate]="'MAIN_APPLIANCES.cooktop '">Cooktop repair</li>
 
       </ul>
 

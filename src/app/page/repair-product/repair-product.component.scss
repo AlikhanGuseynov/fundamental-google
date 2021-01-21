@@ -112,14 +112,18 @@
 
   &:hover {
     background: linear-gradient(327.46deg, #54AAD9 -144.44%, #45B585 158.83%);
-  }
 
-  &:hover path {
-    stroke: #fff;
-  }
+    .white {
+      display: block;
+    }
 
-  &:hover .appliance-title {
-    color: #FFFFFF;
+    .black {
+      display: none;
+    }
+
+    .appliance-title {
+      color: #fff;
+    }
   }
 }
 

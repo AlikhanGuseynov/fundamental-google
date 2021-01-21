@@ -1,4 +1,5 @@
 import {Component, ElementRef, HostListener, OnInit, ViewChild, ViewChildren} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -27,9 +28,9 @@ export class MainComponent implements OnInit {
     ...this.brandListItem,
   ];
 
-  location: number;
+  location = 0;
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   onScroll(event): void {
@@ -49,7 +50,7 @@ export class MainComponent implements OnInit {
     } else {
       this.otherHeader.nativeElement.classList.remove('active');
     }
-    
+
     if (verticalOffset > elBookHeader) {
       this.bookHeader.nativeElement.classList.add('active');
     } else {
@@ -58,7 +59,45 @@ export class MainComponent implements OnInit {
 
   }
 
-  goTo(event?): void {
-
+  goTo(type?: string): void {
+    if (type === 'refrigerator' || type === 'washer' || type === 'drier' || type === 'oven') {
+      this.router.navigate(['product-next', type]);
+    }else{
+      this.router.navigate(['problem-type', type]);
+    }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

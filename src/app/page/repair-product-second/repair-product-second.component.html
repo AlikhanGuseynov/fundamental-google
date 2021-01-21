@@ -1,0 +1,119 @@
+<header class="header flex align-items-center">
+  <img src="assets/img/icon/white-logo.svg" alt="">
+</header>
+
+<h1 class="title">
+  Book Repair Appointment
+</h1>
+
+<div class="progress-bar justify-content-center">
+
+  <div class="progress-bar-item-wrapper">
+    <p class="progress-bar-item active" [translate]="'QUIZ.progress_bar_product'">Product</p>
+  </div>
+
+  <div class="progress-bar-item-wrapper">
+    <p class="progress-bar-item" [translate]="'QUIZ.progress_bar_date'">Date</p>
+  </div>
+
+  <div class="progress-bar-item-wrapper">
+    <p class="progress-bar-item" [translate]="'QUIZ.progress_bar_location'">Location</p>
+  </div>
+
+  <div class="progress-bar-item-wrapper">
+    <p class="progress-bar-item" [translate]="'QUIZ.progress_bar_contact'">Contact</p>
+  </div>
+
+  <div class="progress-bar-line">
+    <div class="progress-bar-line-active">
+      <!--PROGRESS BAR-->
+    </div>
+  </div>
+</div>
+
+<p class="quiz-title">Don’t worry! We’re here to help</p>
+<p class="quiz-subtitle">First, choose your product.</p>
+
+<div class="width">
+
+  <ul class="appliances-list custom-width flex justify-content-center">
+
+    <ng-container *ngIf="type === 'refrigerator'">
+      <li class="appliance-card" (click)="goTo('refrigerator')">
+        <div class="appliance-card-img-wrapper">
+          <img src="assets/img/icon/refrigirator.svg" alt="" class="appliance-img black">
+          <img src="assets/img/icon/refrigirator-white.svg" alt="" class="appliance-img white">
+        </div>
+        <p class="appliance-title" [translate]="'MAIN_APPLIANCES.refrigirator'">Refrigirator Repair</p>
+      </li>
+
+      <li class="appliance-card" (click)="goTo('refrigirator')">
+        <div class="appliance-card-img-wrapper">
+          <img src="assets/img/icon/refrigirator-second.svg" alt="" class="appliance-img black">
+          <img src="assets/img/icon/refrigirator-second.svg" alt="" class="appliance-img white">
+        </div>
+        <p class="appliance-title" [translate]="'MAIN_APPLIANCES.refrigirator'">Refrigirator Repair</p>
+      </li>
+    </ng-container>
+
+    <ng-container *ngIf="type === 'washer'">
+      <li class="appliance-card" (click)="goTo('washer')">
+        <div class="appliance-card-img-wrapper">
+          <img src="assets/img/icon/washer.svg" alt="" class="appliance-img black">
+          <img src="assets/img/icon/washer-white.svg" alt="" class="appliance-img white">
+        </div>
+        <p class="appliance-title" [translate]="'MAIN_APPLIANCES.washer'">Refrigirator Repair</p>
+      </li>
+
+      <li class="appliance-card" (click)="goTo('washer')">
+        <div class="appliance-card-img-wrapper">
+          <img src="assets/img/icon/washer-second.svg" alt="" class="appliance-img black">
+          <img src="assets/img/icon/washer-second.svg" alt="" class="appliance-img white">
+        </div>
+        <p class="appliance-title" [translate]="'MAIN_APPLIANCES.washer'">Refrigirator Repair</p>
+      </li>
+    </ng-container>
+
+    <ng-container *ngIf="type === 'drier'">
+      <li class="appliance-card" (click)="goTo('drier')">
+        <div class="appliance-card-img-wrapper">
+          <img src="assets/img/icon/drier.svg" alt="" class="appliance-img black">
+          <img src="assets/img/icon/drier-white.svg" alt="" class="appliance-img white">
+        </div>
+        <p class="appliance-title" [translate]="'MAIN_APPLIANCES.drier'">Refrigirator Repair</p>
+      </li>
+
+      <li class="appliance-card" (click)="goTo('drier')">
+        <div class="appliance-card-img-wrapper">
+          <img src="assets/img/icon/drier-second.svg" alt="" class="appliance-img black">
+          <img src="assets/img/icon/drier-second.svg" alt="" class="appliance-img white">
+        </div>
+        <p class="appliance-title" [translate]="'MAIN_APPLIANCES.drier'">Refrigirator Repair</p>
+      </li>
+    </ng-container>
+
+    <ng-container *ngIf="type === 'oven'">
+      <li class="appliance-card" (click)="goTo('oven')">
+        <div class="appliance-card-img-wrapper">
+          <img src="assets/img/icon/oven.svg" alt="" class="appliance-img black">
+          <img src="assets/img/icon/oven-white.svg" alt="" class="appliance-img white">
+        </div>
+        <p class="appliance-title" [translate]="'MAIN_APPLIANCES.oven'">Refrigirator Repair</p>
+      </li>
+
+      <li class="appliance-card" (click)="goTo('oven')">
+        <div class="appliance-card-img-wrapper">
+          <img src="assets/img/icon/oven-second.svg" alt="" class="appliance-img black">
+          <img src="assets/img/icon/oven-second.svg" alt="" class="appliance-img white">
+        </div>
+        <p class="appliance-title" [translate]="'MAIN_APPLIANCES.oven'">Refrigirator Repair</p>
+      </li>
+    </ng-container>
+
+  </ul>
+
+</div>
+
+<footer class="footer center">
+  <button class="btn footer-btn-back" (click)="back()">Back</button>
+</footer>

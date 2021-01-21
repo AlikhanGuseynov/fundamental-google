@@ -1,22 +1,109 @@
 {
-  "MAIN": {
-    "title": "Are you looking to get some assistance with your appliance repair?",
-    "subtitle": "Our team of qualified Technicians is ready to fix your appliance",
-    "price": "$59",
-    "price_title": "SERVICE CALLS",
-    "price_subtitle": "No service call charge with a repair",
-    "book_appointment": "Book an appointment",
-    "work_time": "MON - SAT 8:00am - 7:00pm",
-    "how_it_works": "How It Works",
-    "how_it_works_item1_title": "Pick a Time",
-    "how_it_works_item2_title": "Pro estimate",
-    "how_it_works_item3_title": "Pay after work",
-    "how_it_works_item1_text": "Select the day and time for your service and describe the issue.",
-    "how_it_works_item2_text": "Our experienced and fully-equipped Pro will come and estimate the issue.",
-    "how_it_works_item3_text": "Once the Pro completes the work you pay for service and get our Guarantee."
+  "BUTTON" : {
+    "back" : "Back",
+    "continue" : "Continue"
   },
-  "CALENDAR": {
-    "TITLE": "Select date",
-    "SELECT": "Seç"
+  "CONGRATULATION" : {
+    "title" : "Congratulations Ahmed! Your appointment is confirmed"
+  },
+  "CONTACT" : {
+    "email" : "Email",
+    "name" : "First Name",
+    "phone" : "Phone",
+    "surname" : "Last Name",
+    "title" : "Please tell us contact info"
+  },
+  "DATE" : {
+    "title" : "Pick an arrival time that suite you"
+  },
+  "DETAIL" : {
+    "title" : "Please describe the issue in detail"
+  },
+  "LOCATION" : {
+    "privacy" : "Privacy Policy",
+    "street" : "Street Adress",
+    "street_more" : "ADT/Suite/Unit Number",
+    "title" : "Where shall we send your technician?",
+    "zip_code" : "ZIP Code"
+  },
+  "MAIN" : {
+    "book_an_appointment" : "BOOK AN APPOINTMENT",
+    "price" : "$59",
+    "price_subtitle" : "No service call charge with a repair",
+    "price_title" : "SERVICE CALLS",
+    "subtitle" : "Our team of qualified Technicians is ready to fix your appliance",
+    "title" : "Are you looking to get some assistance with your appliance repair?",
+    "work_time" : "MON - SAT 8:00am - 7:00pm"
+  },
+  "MAIN_APPLIANCES" : {
+    "appliance_instalation" : "Appliance Instalation",
+    "cooktop " : "Cooktop  Repair",
+    "dishwasher " : "Dishwasher Repair",
+    "drier" : "Repair",
+    "electric" : "Electric Appliance Instalation",
+    "kitchen" : "Kitchen Hood Repair",
+    "microwave_repair" : "Microwave Repair",
+    "oven" : "Oven Repair",
+    "range" : "Range & Stove",
+    "refrigirator" : "Refrigirator Repair",
+    "title" : "Appliances we service",
+    "trash_compactor" : "Trash Compactor",
+    "washer" : "Washer Repair"
+  },
+  "MAIN_BRAND" : {
+    "title" : "Brand we service"
+  },
+  "MAIN_FOOTER" : {
+    "email" : "info@fundamental.com",
+    "love_us" : "People love us on:",
+    "our_services" : "Our Services"
+  },
+  "MAIN_HOW_IT_WORK" : {
+    "item_text_1" : "Select the day and time for your service and describe the issue.",
+    "item_text_2" : "Our experienced and fully-equipped Pro will come and estimate the issue.",
+    "item_text_3" : "Once the Pro completes the work you pay for service and get our Guarantee.",
+    "item_title_1" : "Pick a Time",
+    "item_title_2" : "Pro estimate",
+    "item_title_3" : "Pay after work",
+    "title" : "How It Works"
+  },
+  "MAIN_LOCATION" : {
+    "title" : "Our locations"
+  },
+  "MAIN_REASONS" : {
+    "item_subtitle_1" : "appliance service",
+    "item_subtitle_2" : "as possible",
+    "item_subtitle_3" : "in our team",
+    "item_subtitle_4" : "$59 service call",
+    "item_subtitle_5" : "3 months",
+    "item_title_1" : "High quality",
+    "item_title_2" : "QUICK WORK",
+    "item_title_3" : "licensed experts",
+    "item_title_4" : "lowest prices",
+    "item_title_5" : "repair warranty",
+    "title" : "Several reasons to trust us"
+  },
+  "MAIN_RESULTS" : {
+    "item_feedback" : "POSITIVE FEEDBACK",
+    "item_feedback_value" : "99%",
+    "item_happy" : "HAPPY CUSTOMERS",
+    "item_happy_value" : "1500+",
+    "item_replaced" : "PARTS REPLACED",
+    "item_replaced_value" : "1250+",
+    "title" : "Our results"
+  },
+  "PROBLEM" : {
+    "subtitle" : "So, what seems to be the problem?",
+    "title" : "So, what seems to be the problem?"
+  },
+  "PRODUCT" : {
+    "subtitle" : "First, choose your product.",
+    "title" : "Don’t worry! We’re here to help"
+  },
+  "QUIZ" : {
+    "progress_bar_contact" : "Contact",
+    "progress_bar_date" : "Date",
+    "progress_bar_location" : "Location",
+    "progress_bar_product" : "Product"
   }
 }
