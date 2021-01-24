@@ -28,6 +28,8 @@
   },
   "MAIN" : {
     "book_an_appointment" : "BOOK AN APPOINTMENT",
+    "call_us_now" : "CAll us now",
+    "phone_number" : "(408) 708 31 44",
     "price" : "$59",
     "price_subtitle" : "No service call charge with a repair",
     "price_title" : "SERVICE CALLS",
@@ -38,8 +40,8 @@
   "MAIN_APPLIANCES" : {
     "appliance_instalation" : "Appliance Instalation",
     "cooktop " : "Cooktop  Repair",
-    "dishwasher " : "Dishwasher Repair",
-    "drier" : "Repair",
+    "dishwasher" : "Dishwasher repair",
+    "drier" : "Drier Repair",
     "electric" : "Electric Appliance Instalation",
     "kitchen" : "Kitchen Hood Repair",
     "microwave_repair" : "Microwave Repair",

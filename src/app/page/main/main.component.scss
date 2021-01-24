@@ -113,8 +113,7 @@ app-mobile-nav-menu {
 
 .main-title {
   font-weight: bold;
-  //font-size: 32px;
-  font-size: 30px;
+  font-size: 36px;
   line-height: 120%;
   text-align: center;
   color: #FFFFFF;
@@ -123,8 +122,7 @@ app-mobile-nav-menu {
 
 .main-subtitle {
   font-weight: 500;
-  //font-size: 28px;
-  font-size: 26px;
+  font-size: 28px;
   line-height: 34px;
   font-style: italic;
   text-align: center;
@@ -139,6 +137,7 @@ app-mobile-nav-menu {
   overflow: hidden;
   width: 330px;
   height: 240px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 .price-block {
@@ -154,7 +153,6 @@ app-mobile-nav-menu {
   font-size: 110px;
   line-height: 110px;
   text-align: center;
-  //margin-top: 20px;
   letter-spacing: -0.05em;
 }
 
@@ -615,6 +613,20 @@ app-mobile-nav-menu {
   margin: 0 auto;
 }
 
+.contact-wrapper{
+  width: 300px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 1440px) {
+  .main-title {
+    font-size: 30px;
+  }
+  .main-subtitle {
+    font-size: 26px;
+  }
+}
 
 @media (max-width: 992px) {
   .custom-width {
@@ -653,6 +665,10 @@ app-mobile-nav-menu {
 }
 
 @media (max-width: 720px) {
+  app-mobile-nav-menu {
+    display: block;
+  }
+
   .custom-width {
     width: 560px;
   }
@@ -710,9 +726,6 @@ app-mobile-nav-menu {
       height: 30px;
     }
   }
-  app-mobile-nav-menu {
-    display: block;
-  }
   .main-logo {
     display: none;
   }
@@ -731,7 +744,7 @@ app-mobile-nav-menu {
     margin-top: 54px;
   }
   .custom-width {
-    width: 100%;
+    width: 90%;
   }
   .appliances-list {
     grid-template-columns: repeat(3, 1fr);
@@ -817,6 +830,7 @@ app-mobile-nav-menu {
     position: fixed;
     bottom: 0;
     width: 100%;
+    left: 0;
     z-index: 10;
     border-radius: 0;
     margin-bottom: 0;
@@ -953,7 +967,12 @@ app-mobile-nav-menu {
   .contact-list {
     margin-top: 26px;
   }
-
+  .love-us {
+    border-bottom: 2px solid #303746;
+  }
+  .sm-links {
+    border-bottom: none;
+  }
   .our-services-list {
     grid-template-columns: 1fr;
   }
@@ -972,6 +991,9 @@ app-mobile-nav-menu {
   .footer-row {
     margin-right: 0;
   }
+  .footer-row-second {
+    margin-top: 0 !important;
+  }
   .footer {
     padding-left: 30px;
     padding-bottom: 60px;
@@ -989,7 +1011,6 @@ app-mobile-nav-menu {
   .main-block {
     padding: 0;
   }
-
   .custom-width {
     width: 320px
   }
@@ -1000,10 +1021,37 @@ app-mobile-nav-menu {
     grid-template-columns: repeat(2, 1fr);
   }
   .appliance-card {
-    width: 95px;
+    width: 110px;
   }
   .title {
     font-size: 23px;
   }
 
+  .sm-links {
+    padding-bottom: 0;
+  }
+  .love-us {
+    padding-bottom: 18px;
+  }
+  .reason-item {
+    margin: 0 20px 50px;
+  }
+  .appliance-title {
+    padding: 0 5px;
+  }
+  .footer-row-second {
+    margin-top: 0 !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .custom-width {
+    width: 290px;
+  }
+  .appliance-card-img-wrapper {
+    margin-bottom: 8px;
+  }
+  .appliance-card {
+    width: 100px;
+  }
 }

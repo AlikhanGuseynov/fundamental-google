@@ -10,15 +10,17 @@
       <img src="assets/img/icon/full-logo.svg" class="main-logo" alt="">
       <img src="assets/img/icon/mobile-view-logo.svg" class="mobile-view-logo" alt="">
 
-      <button class="btn header-location-btn flex align-items-center header-mobile-view-item">
-        <img src="assets/img/icon/location.svg" alt="">
-        Location
-      </button>
+      <ng-container *ngIf="false">
+        <button class="btn header-location-btn flex align-items-center header-mobile-view-item">
+          <img src="assets/img/icon/location.svg" alt="">
+          Location
+        </button>
 
-      <button class="btn language-btn flex align-items-center header-mobile-view-item">
-        <img src="assets/img/icon/language-icon.svg" alt="">
-        ENG
-      </button>
+        <button class="btn language-btn flex align-items-center header-mobile-view-item">
+          <img src="assets/img/icon/language-icon.svg" alt="">
+          ENG
+        </button>
+      </ng-container>
 
     </div>
 
@@ -247,8 +249,9 @@
           <img src="assets/img/icon/dishwasher.svg" alt="" class="appliance-img black">
           <img src="assets/img/icon/dishwasher-white.svg" alt="" class="appliance-img white">
         </div>
-        <p class="appliance-title" [translate]="'MAIN_APPLIANCES.dishwasher '">Dishwasher Repair</p>
+        <p class="appliance-title" [translate]="'MAIN_APPLIANCES.dishwasher'">Dishwasher Repair</p>
       </li>
+
 
       <li class="appliance-card" (click)="goTo('drier')">
         <div class="appliance-card-img-wrapper">
@@ -367,42 +370,62 @@
 
   </section>
 
-  <section class="location">
-    <!--  img.location-->
-    <p class="title location-title" [translate]="'MAIN_LOCATION.title'">
-      Our locations
-    </p>
+  <section class="contact">
+    <div class="contact-wrapper flex-column">
+      <h1>CONTACT</h1>
 
-    <div class="location-content">
+      <label>name</label>
+      <input placeholder="name" type="text">
 
-      <div class="location-btns flex">
+      <label>phone number</label>
+      <input placeholder="phone number" type="text">
 
-        <button (click)="location = 0" [ngClass]="{'active' : location === 0}" class="btn location-btn">
-          Miami
-        </button>
-        <button (click)="location = 1" [ngClass]="{'active' : location === 1}" class="btn location-btn">
-          Orlando
-        </button>
-        <button (click)="location = 2" [ngClass]="{'active' : location === 2}" class="btn location-btn">
-          New York
-        </button>
-      </div>
+      <label>time</label>
+      <input placeholder="date" type="time">
 
-      <div class="map-container">
-        <!--      <iframe class="map" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"-->
-        <!--              src="https://www.openstreetmap.org/export/embed.html?bbox=-80.21899223327637%2C26.19695608091046%2C-80.15324592590333%2C26.240845964466036&amp;layer=mapnik"-->
-        <!--              ></iframe>-->
-
-        <!--      <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"-->
-        <!--              src="https://www.openstreetmap.org/export/embed.html?bbox=-80.21899223327637%2C26.19695608091046%2C-80.15324592590333%2C26.240845964466036&amp;layer=mapnik&amp;marker=26.21890309233762%2C-80.18611907958984"></iframe>-->
-        <!--              <iframe-->
-        <!--                class="map"-->
-        <!--                frameborder="0" style="border:0"-->
-        <!--                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAoEtjcY7CYgZaq57Sn181mOa_EDwhGp6s&q=Space+Needle,Seattle+WA" allowfullscreen>-->
-        <!--              </iframe>-->
-      </div>
+      <label>date</label>
+      <input placeholder="date" type="date">
     </div>
+
   </section>
+
+  <!--  <section class="location">-->
+  <!--    &lt;!&ndash;  img.location&ndash;&gt;-->
+  <!--    <p class="title location-title" [translate]="'MAIN_LOCATION.title'">-->
+  <!--      Our locations-->
+  <!--    </p>-->
+
+  <!--    <div class="location-content">-->
+
+  <!--      <div class="location-btns flex">-->
+
+  <!--        <button (click)="location = 0" [ngClass]="{'active' : location === 0}" class="btn location-btn">-->
+  <!--          Miami-->
+  <!--        </button>-->
+  <!--        <button (click)="location = 1" [ngClass]="{'active' : location === 1}" class="btn location-btn">-->
+  <!--          Orlando-->
+  <!--        </button>-->
+  <!--        <button (click)="location = 2" [ngClass]="{'active' : location === 2}" class="btn location-btn">-->
+  <!--          New York-->
+  <!--        </button>-->
+  <!--      </div>-->
+
+  <!--      <div class="map-container">-->
+  <!--        &lt;!&ndash;      <iframe class="map" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"&ndash;&gt;-->
+  <!--        &lt;!&ndash;              src="https://www.openstreetmap.org/export/embed.html?bbox=-80.21899223327637%2C26.19695608091046%2C-80.15324592590333%2C26.240845964466036&amp;layer=mapnik"&ndash;&gt;-->
+  <!--        &lt;!&ndash;              ></iframe>&ndash;&gt;-->
+
+  <!--        &lt;!&ndash;      <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"&ndash;&gt;-->
+  <!--        &lt;!&ndash;              src="https://www.openstreetmap.org/export/embed.html?bbox=-80.21899223327637%2C26.19695608091046%2C-80.15324592590333%2C26.240845964466036&amp;layer=mapnik&amp;marker=26.21890309233762%2C-80.18611907958984"></iframe>&ndash;&gt;-->
+  <!--        &lt;!&ndash;              <iframe&ndash;&gt;-->
+  <!--        &lt;!&ndash;                class="map"&ndash;&gt;-->
+  <!--        &lt;!&ndash;                frameborder="0" style="border:0"&ndash;&gt;-->
+  <!--        &lt;!&ndash;                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAoEtjcY7CYgZaq57Sn181mOa_EDwhGp6s&q=Space+Needle,Seattle+WA" allowfullscreen>&ndash;&gt;-->
+  <!--        &lt;!&ndash;              </iframe>&ndash;&gt;-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </section>-->
+
 
   <footer class="main-footer">
 

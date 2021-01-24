@@ -22,10 +22,26 @@ export class MainComponent implements OnInit {
   ];
 
   brandList = [
-    ...this.brandListItem,
-    ...this.brandListItem,
-    ...this.brandListItem,
-    ...this.brandListItem,
+    {path: 'bosch.svg'},
+    {path: 'whirlpool.svg'},
+    {path: 'sub-zero.svg'},
+    {path: 'kitchenAid.svg'},
+    {path: 'ge-appliances.svg'},
+    {path: 'samsung.svg'},
+    {path: 'maytag.svg'},
+    {path: 'lg.svg'},
+    {path: 'amana.svg'},
+    {path: 'blomberg.svg'},
+    {path: 'kenmore.svg'},
+    {path: 'jenn-air.svg'},
+    {path: 'viking.svg'},
+    {path: 'electrolux.svg'},
+    {path: 'miele.svg'},
+    {path: 'frigidaire.svg'},
+    {path: 'thermador.svg'},
+    {path: 'wolf.svg'},
+    {path: 'fisher.svg'},
+    {path: 'inglis.svg'},
   ];
 
   location = 0;
