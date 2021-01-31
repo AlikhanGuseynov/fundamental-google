@@ -18,7 +18,7 @@
   position: relative;
   display: block;
   margin-left: auto;
-  right: 24px;
+  right: 15px;
   top: 18px;
 }
 
@@ -35,13 +35,15 @@
 }
 
 .call-us-btn {
-  width: calc(100% - 72px);
+  width: calc(100% - 40px);
   border: 1.5px solid #EFEFEF;
   box-sizing: border-box;
   border-radius: 12px;
-  margin: 35px auto 48px;
+  margin: 35px auto 40px;
   display: block;
-  height: 66px;
+  padding: 12px 0;
+  text-decoration: none;
+  text-align: center;
 }
 
 .mob-number {
@@ -53,8 +55,8 @@
 }
 
 .nav-list {
-  overflow-y: scroll;
-  height: calc(100vh - 245px);
+  overflow-y: hidden;
+  height: calc(100vh - 240px);
 }
 
 .nav-list-item + .nav-list-item {
@@ -62,7 +64,7 @@
 }
 
 .nav-list-item {
-  margin: 0 36px;
+  margin: 0 20px;
 }
 
 .nav-list-item-text {
@@ -112,82 +114,14 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.book-btn {
+  width: 100vw;
+  height: 51px;
+  background: #FEA520;
+  font-weight: 600;
+  font-size: 16px;
+  color: #FFFFFF;
+  position: absolute;
+  bottom: 0;
+  border: none;
+}

@@ -1,5 +1,7 @@
 import {Component, ElementRef, HostListener, OnInit, ViewChild, ViewChildren} from '@angular/core';
 import {Router} from '@angular/router';
+import {AngularFireDatabase} from '@angular/fire/database';
+import {log} from 'util';
 
 @Component({
   selector: 'app-main',
@@ -8,10 +10,16 @@ import {Router} from '@angular/router';
 })
 export class MainComponent implements OnInit {
 
-  @ViewChild('phoneNumberBtn') phoneNumberBtn: ElementRef;
+  // @ViewChild('phoneNumberBtn') phoneNumberBtn: ElementRef;
   @ViewChild('otherHeader') otherHeader: ElementRef;
   @ViewChild('bookAppointmentMain') bookAppointmentMain: ElementRef;
-  @ViewChild('bookHeader') bookHeader: ElementRef;
+  // @ViewChild('bookHeader') bookHeader: ElementRef;
+  name = '';
+  mobile = '';
+  time: any;
+  date: any;
+  path = 'requests/';
+  seeMore = false;
 
   brandListItem = [
     {path: 'bosch.svg'},
@@ -46,7 +54,10 @@ export class MainComponent implements OnInit {
 
   location = 0;
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private dataBase: AngularFireDatabase,
+  ) {
   }
 
   onScroll(event): void {
@@ -54,23 +65,24 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // this.set();
   }
 
   @HostListener('window:scroll', ['$event']) scroll(event): void {
     const verticalOffset = window.pageYOffset;
-    const elPhoneNumber = this.phoneNumberBtn.nativeElement.offsetTop;
+    // const elPhoneNumber = this.phoneNumberBtn.nativeElement.offsetTop;
     const elBookHeader = this.bookAppointmentMain.nativeElement.offsetTop;
 
-    if (verticalOffset > elPhoneNumber) {
-      this.otherHeader.nativeElement.classList.add('active');
-    } else {
-      this.otherHeader.nativeElement.classList.remove('active');
-    }
+    // if (verticalOffset > elPhoneNumber) {
+    //   this.otherHeader.nativeElement.classList.add('active');
+    // } else {
+    //   this.otherHeader.nativeElement.classList.remove('active');
+    // }
 
     if (verticalOffset > elBookHeader) {
-      this.bookHeader.nativeElement.classList.add('active');
+      // this.bookHeader.nativeElement.classList.add('active');
     } else {
-      this.bookHeader.nativeElement.classList.remove('active');
+      // this.bookHeader.nativeElement.classList.remove('active');
     }
 
   }
@@ -78,42 +90,59 @@ export class MainComponent implements OnInit {
   goTo(type?: string): void {
     if (type === 'refrigerator' || type === 'washer' || type === 'drier' || type === 'oven') {
       this.router.navigate(['product-next', type]);
-    }else{
+    } else {
       this.router.navigate(['problem-type', type]);
     }
   }
+
+  set(form): void {
+    console.log(form);
+    console.log(form.valid);
+    if (form.valid) {
+      const id = new Date().getTime();
+      this.dataBase.object('requests/' + id).update({['name']: this.name})
+        .then(_ => this.setNumber(id))
+        .catch(err => console.log(err, 'You dont have access!'));
+    } else {
+      // alert('Fill out the form completely');
+    }
+  }
+
+  setNumber(id): void {
+    this.dataBase.object('requests/' + id).update({['mobile']: this.mobile})
+      .then(_ => this.setTime(id))
+      .catch(err => console.log(err, 'You dont have access!'));
+  }
+
+  setTime(id): void {
+    this.dataBase.object('requests/' + id).update({['time']: this.time})
+      .then(_ => this.setDate(id))
+      .catch(err => console.log(err, 'You dont have access!'));
+  }
+
+  setDate(id): void {
+    this.dataBase.object('requests/' + id).update({['date']: this.date})
+      .then(_ => this.setState(id))
+      .catch(err => console.log(err, 'You dont have access!'));
+  }
+
+  setState(id): void {
+    this.dataBase.object('requests/' + id).update({['checked']: 'false'})
+      .then(_ => this.setTime(id))
+      .catch(err => console.log(err, 'You dont have access!'));
+  }
+
+  scrollToContact(): void {
+    const termsTitle = document.getElementById('contactSection');
+    const scrollIntoViewOptions: ScrollIntoViewOptions = {block: 'start', behavior: 'smooth'};
+    termsTitle.scrollIntoView(scrollIntoViewOptions);
+  }
+
+  scrollTo(id): void {
+    const termsTitle = document.getElementById(id).offsetTop;
+    window.scroll({
+      top: termsTitle - 54,
+      behavior: 'smooth'
+    });
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

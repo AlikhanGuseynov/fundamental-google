@@ -12,13 +12,15 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import { ProblemTypeComponent } from './page/problem-type/problem-type.component';
 import { BrandsComponent } from './page/brands/brands.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { IssueInDetailComponent } from './page/issue-in-detail/issue-in-detail.component';
 import { AddressComponent } from './page/address/address.component';
 import { ContactInfoComponent } from './page/contact-info/contact-info.component';
 import { SuccessfulConfirmationComponent } from './page/successful-confirmation/successful-confirmation.component';
 import { DateComponent } from './page/date/date.component';
 import { RepairProductSecondComponent } from './page/repair-product-second/repair-product-second.component';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment.prod';
 
 export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -44,6 +46,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {
@@ -52,7 +55,8 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
         deps: [HttpClient]
       }
     }),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

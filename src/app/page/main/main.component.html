@@ -5,33 +5,31 @@
   </button>
   <header class="header flex align-items-center justify-content-between">
 
-    <div class="flex align-items-center">
+    <div class="flex align-items-center" style="width: 100%">
 
       <img src="assets/img/icon/full-logo.svg" class="main-logo" alt="">
       <img src="assets/img/icon/mobile-view-logo.svg" class="mobile-view-logo" alt="">
 
-      <ng-container *ngIf="false">
-        <button class="btn header-location-btn flex align-items-center header-mobile-view-item">
-          <img src="assets/img/icon/location.svg" alt="">
-          Location
-        </button>
+      <div class="mob-header-call-wrapper">
+        <a href="tel:4087083144" class="web-none btn mob-header-call flex align-items-center mob-header-items">
+          CALL
+        </a>
+      </div>
 
-        <button class="btn language-btn flex align-items-center header-mobile-view-item">
-          <img src="assets/img/icon/language-icon.svg" alt="">
-          ENG
-        </button>
-      </ng-container>
+      <button (click)="scrollToContact()" class="web-none btn mob-header-book flex align-items-center mob-header-items">
+        BOOK
+      </button>
 
     </div>
 
     <div class="flex align-items-center">
 
-      <button #bookHeader class="btn book-btn-header" [routerLink]="'/product'"
-              [translate]="'MAIN.book_an_appointment'">
-        BOOK AN APPOINTMENT
-      </button>
+      <!--      <button #bookHeader class="btn book-btn-header" [routerLink]="'/product'"-->
+      <!--              [translate]="'MAIN.book_an_appointment'">-->
+      <!--        BOOK AN APPOINTMENT-->
+      <!--      </button>-->
 
-      <div class="header-mobile-view-item">
+      <a href="tel:4087083144" class="header-call-us-web header-mobile-view-item">
         <div class="flex">
           <img class="phone-icon" src="assets/img/icon/phone.svg" alt="">
           <p class="call-us" [translate]="'MAIN.call_us_now'">
@@ -41,12 +39,14 @@
         <p class="phone-number" [translate]="'MAIN.phone_number'">
           (408) 708 31 44
         </p>
-      </div>
+      </a>
 
     </div>
 
-    <app-mobile-nav-menu>
-
+    <app-mobile-nav-menu
+      (scrollToForm)="scrollToContact()"
+      (scrollNav)="scrollTo($event)"
+    >
     </app-mobile-nav-menu>
 
   </header>
@@ -56,12 +56,15 @@
 
   <section (scroll)="scroll($event)" class="main-block flex-column justify-content-around">
 
-    <h1 class="main-title" [translate]="'MAIN.title'">
-      Are you looking to get some assistance with your appliance repair?
-    </h1>
-    <p class="main-subtitle" [translate]="'MAIN.subtitle'">
-      Our team of qualified Technicians is ready to fix your appliance
-    </p>
+    <div>
+      <h1 class="main-title" [translate]="'MAIN.title'">
+        Are you looking to get some assistance with your appliance repair?
+      </h1>
+      <p class="main-subtitle" [translate]="'MAIN.subtitle'">
+        Our team of qualified Technicians is ready to fix your appliance
+      </p>
+    </div>
+
 
     <div>
       <div class="price-block-wrapper">
@@ -79,28 +82,36 @@
         </div>
       </div>
 
-      <button #phoneNumberBtn class="btn phone-number-mobile-view flex justify-content-center align-items-center">
-        <img src="assets/img/icon/mob-view-phone-icon.svg" alt="">
-        <p [translate]="'MAIN.phone_number'">(408) 708 31 44</p>
-      </button>
     </div>
 
-
     <div>
-      <button #bookAppointmentMain class="btn book-btn" [routerLink]="'/product'"
-              [translate]="'MAIN.book_an_appointment'">
+      <button (click)="scrollToContact()"
+              #bookAppointmentMain
+              class="btn book-btn"
+              [translate]="'MAIN.book_an_appointment'"
+      >
         BOOK AN APPOINTMENT
       </button>
 
       <p class="work-time" [translate]="'MAIN.work_time'">
         MON - SAT 8:00am - 7:00pm
       </p>
-    </div>
 
+      <a class="btn phone-number-mobile-view flex-column align-items-center justify-content-center">
+        <div class="flex align-items-center">
+          <img src="assets/img/icon/phone-icon-for-link.svg" style="margin-right: 8px" alt="">
+          <p class="mobile-view-call-us">
+            CAll us now
+          </p>
+        </div>
+        <p class="mobile-view-phone-number" [translate]="'MAIN.phone_number'">(408) 708 31 44</p>
+      </a>
+
+    </div>
 
   </section>
 
-  <section class="how-it-works">
+  <section id="howItWorks" class="how-it-works" *ngIf="false">
     <p class="title how-it-works-title" [translate]="'MAIN_HOW_IT_WORK.title'">
       How It Works
     </p>
@@ -152,7 +163,7 @@
     </ul>
   </section>
 
-  <section class="reasons">
+  <section id="reasons" class="reasons">
     <p class="title reasons-title" [translate]="'MAIN_REASONS.title'">
       Several reasons to trust us
     </p>
@@ -329,7 +340,7 @@
 
   </section>
 
-  <section class="brand">
+  <section id="brand" class="brand">
 
     <p class="title brand-title" [translate]="'MAIN_BRAND.title'">
       Brand we service
@@ -346,7 +357,7 @@
     </ul>
   </section>
 
-  <section class="result">
+  <section id="results" class="result">
     <p class="title result-title" [translate]="'MAIN_RESULTS.title'">
       Our Results
     </p>
@@ -370,132 +381,239 @@
 
   </section>
 
-  <section class="contact">
-    <div class="contact-wrapper flex-column">
-      <h1>CONTACT</h1>
+  <!--  <section class="contact">-->
 
-      <label>name</label>
-      <input placeholder="name" type="text">
+  <!--    <div class="contact-wrapper custom-width">-->
 
-      <label>phone number</label>
-      <input placeholder="phone number" type="text">
+  <!--      <p class="title contact-title">Contacts</p>-->
+  <!--      <p class="contact-subtitle">We provide services THROUGHOUT los angeles country</p>-->
 
-      <label>time</label>
-      <input placeholder="date" type="time">
+  <!--      <div class="contact-content">-->
 
-      <label>date</label>
-      <input placeholder="date" type="date">
-    </div>
+  <!--        <div>-->
+  <!--          <form action="">-->
+  <!--            <input placeholder="Please Enter Your Name" type="text" class="input">-->
+  <!--            <input prefix="+1" mask="(000) 000 0000" placeholder="Please Enter Your Phone Number" type="text"-->
+  <!--                   class="input number-input">-->
+  <!--            <div class="input-group">-->
+  <!--              <input mask="d0/M0" placeholder="01/01" type="text" class="input">-->
+  <!--              <input mask="HH:m0SS" placeholder="00:00pm/am" pattern="{}" type="text" class="input">-->
+  <!--            </div>-->
+  <!--            <p class="time-select-note">-->
+  <!--              Please select Date and time in any format-->
+  <!--            </p>-->
+  <!--          </form>-->
+  <!--          <button class="btn submit-btn">-->
+  <!--            SEND-->
+  <!--          </button>-->
+  <!--        </div>-->
 
-  </section>
+  <!--        <ul class="contact-list-web">-->
+  <!--          <li class="contact-item contact-item-web flex align-items-center">-->
+  <!--            <img class="contact-item-img" src="assets/img/icon/web-location.svg" alt="">-->
+  <!--            <p class="contact-item-text" [translate]="'MAIN.address'">101 Independence Avenue, S.E. Washington, D.C.-->
+  <!--              20559-6000</p>-->
+  <!--          </li>-->
 
-  <!--  <section class="location">-->
-  <!--    &lt;!&ndash;  img.location&ndash;&gt;-->
-  <!--    <p class="title location-title" [translate]="'MAIN_LOCATION.title'">-->
-  <!--      Our locations-->
-  <!--    </p>-->
+  <!--          <li class="contact-item contact-item-web flex align-items-center">-->
+  <!--            <img class="contact-item-img" src="assets/img/icon/web-phone.svg" alt="">-->
+  <!--            <p class="contact-item-text" [translate]="'MAIN.phone_number'">(408) 708 31 44</p>-->
+  <!--          </li>-->
 
-  <!--    <div class="location-content">-->
+  <!--          <li class="contact-item contact-item-web flex align-items-center">-->
+  <!--            <img class="contact-item-img" src="assets/img/icon/web-mail.svg" alt="">-->
+  <!--            <p class="contact-item-text" [translate]="'MAIN_FOOTER.email'">info@fundamental.com</p>-->
+  <!--          </li>-->
 
-  <!--      <div class="location-btns flex">-->
+  <!--          <li class="contact-item contact-item-web flex align-items-center">-->
+  <!--            <img class="contact-item-img" src="assets/img/icon/web-clock.svg" alt="">-->
+  <!--            <p class="contact-item-text" [translate]="'MAIN.work_time'">MON - FRI 8:00am - 7 00pm</p>-->
+  <!--          </li>-->
+  <!--        </ul>-->
 
-  <!--        <button (click)="location = 0" [ngClass]="{'active' : location === 0}" class="btn location-btn">-->
-  <!--          Miami-->
-  <!--        </button>-->
-  <!--        <button (click)="location = 1" [ngClass]="{'active' : location === 1}" class="btn location-btn">-->
-  <!--          Orlando-->
-  <!--        </button>-->
-  <!--        <button (click)="location = 2" [ngClass]="{'active' : location === 2}" class="btn location-btn">-->
-  <!--          New York-->
-  <!--        </button>-->
   <!--      </div>-->
 
-  <!--      <div class="map-container">-->
-  <!--        &lt;!&ndash;      <iframe class="map" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"&ndash;&gt;-->
-  <!--        &lt;!&ndash;              src="https://www.openstreetmap.org/export/embed.html?bbox=-80.21899223327637%2C26.19695608091046%2C-80.15324592590333%2C26.240845964466036&amp;layer=mapnik"&ndash;&gt;-->
-  <!--        &lt;!&ndash;              ></iframe>&ndash;&gt;-->
-
-  <!--        &lt;!&ndash;      <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"&ndash;&gt;-->
-  <!--        &lt;!&ndash;              src="https://www.openstreetmap.org/export/embed.html?bbox=-80.21899223327637%2C26.19695608091046%2C-80.15324592590333%2C26.240845964466036&amp;layer=mapnik&amp;marker=26.21890309233762%2C-80.18611907958984"></iframe>&ndash;&gt;-->
-  <!--        &lt;!&ndash;              <iframe&ndash;&gt;-->
-  <!--        &lt;!&ndash;                class="map"&ndash;&gt;-->
-  <!--        &lt;!&ndash;                frameborder="0" style="border:0"&ndash;&gt;-->
-  <!--        &lt;!&ndash;                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAoEtjcY7CYgZaq57Sn181mOa_EDwhGp6s&q=Space+Needle,Seattle+WA" allowfullscreen>&ndash;&gt;-->
-  <!--        &lt;!&ndash;              </iframe>&ndash;&gt;-->
-  <!--      </div>-->
   <!--    </div>-->
+
   <!--  </section>-->
+  <!--  <section class="contact">-->
 
+  <!--    <div class="contact-wrapper custom-width">-->
 
-  <footer class="main-footer">
+  <!--      <p class="title contact-title">Contacts</p>-->
+  <!--      <p class="contact-subtitle">We provide services THROUGHOUT los angeles country</p>-->
 
-    <div class="footer-row align-items-center custom-width">
+  <!--      <div class="contact-content">-->
 
-      <img src="assets/img/icon/footer-logo.svg" alt="">
+  <!--        <div>-->
+  <!--          <form action="">-->
+  <!--            <input placeholder="Please Enter Your Name" type="text" class="input">-->
+  <!--            <input prefix="+1" mask="(000) 000 0000" placeholder="Please Enter Your Phone Number" type="text"-->
+  <!--                   class="input number-input">-->
+  <!--            <div class="input-group">-->
+  <!--              <input style="grid-column: 1/-1" type="datetime-local" class="input">-->
+  <!--            </div>-->
+  <!--            <p class="time-select-note">-->
+  <!--              Please select Date and time in any format-->
+  <!--            </p>-->
+  <!--          </form>-->
+  <!--          <button class="btn submit-btn">-->
+  <!--            SEND-->
+  <!--          </button>-->
+  <!--        </div>-->
 
-      <div class="footer-right align-items-center love-us">
+  <!--        <ul class="contact-list-web">-->
+  <!--          <li class="contact-item contact-item-web flex align-items-center">-->
+  <!--            <img class="contact-item-img" src="assets/img/icon/web-location.svg" alt="">-->
+  <!--            <p class="contact-item-text" [translate]="'MAIN.address'">101 Independence Avenue, S.E. Washington, D.C.-->
+  <!--              20559-6000</p>-->
+  <!--          </li>-->
 
-        <p class="footer-titles" [translate]="'MAIN_FOOTER.love_us'">
-          People love us on:
-        </p>
+  <!--          <li class="contact-item contact-item-web flex align-items-center">-->
+  <!--            <img class="contact-item-img" src="assets/img/icon/web-phone.svg" alt="">-->
+  <!--            <p class="contact-item-text" [translate]="'MAIN.phone_number'">(408) 708 31 44</p>-->
+  <!--          </li>-->
 
-        <div class="sm-links flex">
-          <a class="yelp-link" href="#">
-            <img src="assets/img/icon/yelp.svg" alt="">
-          </a>
-          <a href="#">
-            <img src="assets/img/icon/google.svg" alt="">
-          </a>
+  <!--          <li class="contact-item contact-item-web flex align-items-center">-->
+  <!--            <img class="contact-item-img" src="assets/img/icon/web-mail.svg" alt="">-->
+  <!--            <p class="contact-item-text" [translate]="'MAIN_FOOTER.email'">info@fundamental.com</p>-->
+  <!--          </li>-->
+
+  <!--          <li class="contact-item contact-item-web flex align-items-center">-->
+  <!--            <img class="contact-item-img" src="assets/img/icon/web-clock.svg" alt="">-->
+  <!--            <p class="contact-item-text" [translate]="'MAIN.work_time'">MON - FRI 8:00am - 7 00pm</p>-->
+  <!--          </li>-->
+  <!--        </ul>-->
+
+  <!--      </div>-->
+
+  <!--    </div>-->
+
+  <!--  </section>-->
+  <section id="contactSection" class="contact">
+
+    <div class="contact-wrapper custom-width">
+
+      <p class="title contact-title">Contacts</p>
+      <p class="contact-subtitle">We provide services THROUGHOUT los angeles country</p>
+
+      <div class="contact-content">
+
+        <div>
+          <form action="">
+            <input placeholder="Please Enter Your Name" type="text" class="input">
+            <input prefix="+1" mask="(000) 000 0000" placeholder="Please Enter Your Phone Number" type="text"
+                   class="input number-input">
+            <div class="input-group">
+              <input type="time" class="input">
+              <input type="date" class="input">
+            </div>
+            <p class="time-select-note">
+              Please select Date and time in any format
+            </p>
+          </form>
+          <button class="btn submit-btn">
+            SEND
+          </button>
         </div>
+
+        <ul class="contact-list-web">
+          <li class="contact-item contact-item-web flex align-items-center">
+            <img class="contact-item-img" src="assets/img/icon/web-location.svg" alt="">
+            <p class="contact-item-text" [translate]="'MAIN.address'">101 Independence Avenue, S.E. Washington, D.C.
+              20559-6000</p>
+          </li>
+
+          <li class="contact-item contact-item-web flex align-items-center">
+            <img class="contact-item-img" src="assets/img/icon/web-phone.svg" alt="">
+            <p class="contact-item-text" [translate]="'MAIN.phone_number'">(408) 708 31 44</p>
+          </li>
+
+          <li class="contact-item contact-item-web flex align-items-center">
+            <img class="contact-item-img" src="assets/img/icon/web-mail.svg" alt="">
+            <p class="contact-item-text" [translate]="'MAIN_FOOTER.email'">info@fundamental.com</p>
+          </li>
+
+          <li class="contact-item contact-item-web flex align-items-center">
+            <img class="contact-item-img" src="assets/img/icon/web-clock.svg" alt="">
+            <p class="contact-item-text" [translate]="'MAIN.work_time'">MON - FRI 8:00am - 7 00pm</p>
+          </li>
+        </ul>
 
       </div>
 
     </div>
 
-    <div class="footer-row footer-row-second custom-width">
+  </section>
 
-      <ul class="contact-list">
 
-        <li class="contact-item flex align-items-center">
-          <img src="assets/img/icon/footer-phone.svg" alt="">
-          <p class="footer-titles" [translate]="'MAIN.phone_number'">(408) 708 31 44</p>
+  <footer class="main-footer">
+
+    <div class="flex footer-top align-items-center justify-content-between custom-width">
+
+      <img class="footer-logo" src="assets/img/icon/footer-logo.svg" alt="">
+
+      <div class="flex align-items-center love-us-container">
+        <p class="love-us" [translate]="'MAIN_FOOTER.love_us'">People love us on:</p>
+        <div class="sm-links flex">
+          <a class="yelp-link" href="#">
+            <img class="yelp-img" src="assets/img/icon/yelp.svg" alt="">
+          </a>
+          <a href="#">
+            <img class="" src="assets/img/icon/google.svg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="custom-width">
+      <ul class="mobile-view-contacts">
+
+        <li class="contact-item contact-item-web flex align-items-center">
+          <img class="contact-item-img" src="assets/img/icon/mob-view-location.svg" alt="">
+          <p class="contact-item-text" [translate]="'MAIN.address'">101 Independence Avenue, S.E. Washington, D.C.
+            20559-6000</p>
         </li>
 
-        <li class="contact-item flex align-items-center">
-          <img src="assets/img/icon/footer-email.svg" alt="">
-          <p class="footer-titles" [translate]="'MAIN_FOOTER.email'">info@fundamental.com</p>
+        <li class="contact-item contact-item-web flex align-items-center">
+          <img class="contact-item-img" src="assets/img/icon/mob-view-phone.svg" alt="">
+          <p class="contact-item-text" [translate]="'MAIN.phone_number'">(408) 708 31 44</p>
         </li>
 
-        <li class="contact-item flex align-items-center">
-          <img src="assets/img/icon/footer-clock.svg" alt="">
-          <p class="footer-titles" [translate]="'MAIN.work_time'">MON - FRI 8:00am - 7 00pm</p>
+        <li class="contact-item contact-item-web flex align-items-center">
+          <img class="contact-item-img" src="assets/img/icon/mob-view-email.svg" alt="">
+          <p class="contact-item-text" [translate]="'MAIN_FOOTER.email'">info@fundamental.com</p>
         </li>
 
+        <li class="contact-item contact-item-web flex align-items-center">
+          <img class="contact-item-img" src="assets/img/icon/mob-view-clock.svg" alt="">
+          <p class="contact-item-text" [translate]="'MAIN.work_time'">MON - FRI 8:00am - 7 00pm</p>
+        </li>
       </ul>
+    </div>
 
-      <ul class="footer-right our-services-list">
+    <div class="custom-width">
 
-        <li class="our-services-title" [translate]="'MAIN_FOOTER.our_services'">
-          Our Services
-        </li>
+      <ul class="our-services-list" [ngClass]="{'active' : seeMore}">
+        <li class="our-services-title" [translate]="'MAIN_FOOTER.our_services'">Our Services</li>
 
         <li class="our-services-item" [translate]="'MAIN_APPLIANCES.refrigirator'">Refrigirator repair</li>
         <li class="our-services-item" [translate]="'MAIN_APPLIANCES.washer'">Washer repair</li>
         <li class="our-services-item" [translate]="'MAIN_APPLIANCES.dishwasher'">Dishwasher repair</li>
+        <li class="see-more" *ngIf="!seeMore" (click)="seeMore = true">see more</li>
         <li class="our-services-item" [translate]="'MAIN_APPLIANCES.drier'">Drier repair</li>
         <li class="our-services-item" [translate]="'MAIN_APPLIANCES.oven'">Oven repair</li>
-        <li class="our-services-item" [translate]="'MAIN_APPLIANCES.appliance_instalation'">Appliance instalation</li>
         <li class="our-services-item" [translate]="'MAIN_APPLIANCES.range'">Range & Stove</li>
         <li class="our-services-item" [translate]="'MAIN_APPLIANCES.trash_compactor'">Trash compactor</li>
-        <li class="our-services-item" [translate]="''">Trash compactor</li>
-        <li class="our-services-item" [translate]="'MAIN_APPLIANCES.electric'">Electric appliance Instalation</li>
+        <li class="our-services-item" [translate]="'MAIN_APPLIANCES.appliance_instalation'">Appliance instalation</li>
+        <li class="our-services-item" [translate]="'MAIN_APPLIANCES.microwave_repair'">Microwave repair</li>
         <li class="our-services-item" [translate]="'MAIN_APPLIANCES.kitchen'">Kitchen hood repair</li>
         <li class="our-services-item" [translate]="'MAIN_APPLIANCES.cooktop '">Cooktop repair</li>
-
+        <li class="our-services-item" [translate]="'MAIN_APPLIANCES.electric'">Electric appliance Instalation</li>
       </ul>
 
-
     </div>
+
 
     <div class="firma">
       <p class="firma-text">
@@ -506,11 +624,3 @@
   </footer>
 
 </div>
-
-
-
-
-
-
-
-

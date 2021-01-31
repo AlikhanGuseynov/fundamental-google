@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-mobile-nav-menu',
@@ -10,6 +10,8 @@ export class MobileNavMenuComponent implements OnInit {
   navBarStat = false;
   activeNav = 'services';
   activeServices: number;
+  @Output() scrollToForm = new EventEmitter();
+  @Output() scrollNav = new EventEmitter();
   servicesItems = [
     {id: 0, text: 'Refrigirator'},
     {id: 1, text: 'Washer'},
@@ -57,5 +59,15 @@ export class MobileNavMenuComponent implements OnInit {
 
   setActiveLanguage(id: number): void {
     this.activeLanguage = id;
+  }
+
+  scrollTo(): void {
+    this.navBarStat = false;
+    this.scrollToForm.emit(true);
+  }
+
+  scrollNavAction(id): void{
+    this.navBarStat = false;
+    this.scrollNav.emit(id);
   }
 }

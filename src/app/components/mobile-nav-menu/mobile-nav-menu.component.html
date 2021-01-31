@@ -7,7 +7,7 @@
     <img src="assets/img/icon/close.svg" alt="">
   </button>
 
-  <button class="btn call-us-btn">
+  <a href="tel:4087083144" class="btn call-us-btn center">
     <div style="margin-bottom: 5px" class="flex align-items-center justify-content-center">
       <img src="assets/img/icon/phone.svg" alt="">
       <p class="call-us">
@@ -15,107 +15,32 @@
       </p>
     </div>
     <p class="mob-number">(408) 708 31 44</p>
-  </button>
+  </a>
 
   <ul class="nav-list">
-    <li class="nav-list-item">
+    <li class="nav-list-item" (click)="scrollNavAction('reasons')">
       <p class="nav-list-item-text">
-        HOME
+        Several reasons to trust us
       </p>
     </li>
-    <li (click)="navItemToggle('services')" class="nav-list-item">
-
-      <div class="flex align-items-center justify-content-between">
-        <img class="nav-arrow"
-             [ngClass]="{'active' : activeNav === 'services'}"
-             src="assets/img/icon/nav-arrow-down.svg" alt=""
-        >
-        <p class="nav-list-item-text">SERVICES</p>
-      </div>
-
-      <ul [ngClass]="{'services' : activeNav === 'services'}" class="subparagraph">
-        <ng-container *ngFor="let item of servicesItems">
-          <li
-            [ngClass]="{'active' : activeServices === item.id}"
-            class="subparagraph-item"
-            (click)="setActiveSubparagraph(item.id)"
-          >{{item.text}}</li>
-        </ng-container>
-      </ul>
-
+    <li class="nav-list-item" (click)="scrollNavAction('brand')">
+      <p class="nav-list-item-text">
+        BRAND WE SERVICE
+      </p>
     </li>
-    <li (click)="navItemToggle('locations')" class="nav-list-item">
-
-      <div class="flex align-items-center justify-content-between">
-        <img class="nav-arrow"
-             [ngClass]="{'active' : activeNav === 'locations'}"
-             src="assets/img/icon/nav-arrow-down.svg" alt=""
-        >
-        <p class="nav-list-item-text">LOCATIONS</p>
-      </div>
-
-      <ul [ngClass]="{'locations' : activeNav === 'locations'}" class="subparagraph">
-        <ng-container *ngFor="let item of locationItems">
-          <li
-            [ngClass]="{'active' : activeLocation === item.id}"
-            class="subparagraph-item"
-            (click)="setActiveLocationSubparagraph(item.id)"
-          >{{item.text}}</li>
-        </ng-container>
-      </ul>
-
+    <li class="nav-list-item" (click)="scrollNavAction('results')">
+      <p class="nav-list-item-text">
+        OUR RESULTS
+      </p>
     </li>
-    <li (click)="navItemToggle('language')" class="nav-list-item">
-
-      <div class="flex align-items-center justify-content-between">
-        <img class="nav-arrow"
-             [ngClass]="{'active' : activeNav === 'language'}"
-             src="assets/img/icon/nav-arrow-down.svg" alt=""
-        >
-        <p class="nav-list-item-text">LANGUAGE</p>
-      </div>
-
-      <ul [ngClass]="{'language' : activeNav === 'language'}" class="subparagraph">
-        <ng-container *ngFor="let item of languageItems">
-          <li
-            [ngClass]="{'active' : activeLanguage === item.id}"
-            class="subparagraph-item"
-            (click)="setActiveLanguage(item.id)"
-          >{{item.text}}</li>
-        </ng-container>
-      </ul>
-
+    <li class="nav-list-item" (click)="scrollNavAction('contactSection')">
+      <p class="nav-list-item-text">
+        CONTACTS
+      </p>
     </li>
   </ul>
 
+  <button class="book-btn" (click)="scrollTo()">
+    BOOK AN APPOINTMENT
+  </button>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
