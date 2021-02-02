@@ -1,4 +1,4 @@
-<div class="header-container">
+<div class="header-container animate__animated wow animate__fadeIn">
   <button class="btn mobile-other-header flex align-items-center" #otherHeader>
     <img src="assets/img/icon/mob-view-phone-icon.svg" style="width: 14px" alt="">
     <span [translate]="'MAIN.phone_number'">(408) 708 31 44</span>
@@ -10,15 +10,18 @@
       <img src="assets/img/icon/full-logo.svg" class="main-logo" alt="">
       <img src="assets/img/icon/mobile-view-logo.svg" class="mobile-view-logo" alt="">
 
-      <div class="mob-header-call-wrapper">
-        <a href="tel:4087083144" class="web-none btn mob-header-call flex align-items-center mob-header-items">
-          CALL
-        </a>
+      <div class="flex align-items-center" style="margin-left: auto;">
+        <div #callBtn class="mob-header-call-wrapper">
+          <a href="tel:4087083144" class="web-none btn mob-header-call flex align-items-center mob-header-items">
+            CALL
+          </a>
+        </div>
+
+        <button (click)="scrollToContact()" class="web-none btn mob-header-book flex align-items-center mob-header-items">
+          BOOK
+        </button>
       </div>
 
-      <button (click)="scrollToContact()" class="web-none btn mob-header-book flex align-items-center mob-header-items">
-        BOOK
-      </button>
 
     </div>
 
@@ -54,7 +57,7 @@
 
 <div (scroll)="scroll($event)" class="page">
 
-  <section (scroll)="scroll($event)" class="main-block flex-column justify-content-around">
+  <section (scroll)="scroll($event)" class="main-block flex-column justify-content-around animate__animated wow animate__fadeIn">
 
     <div>
       <h1 class="main-title" [translate]="'MAIN.title'">
@@ -97,7 +100,7 @@
         MON - SAT 8:00am - 7:00pm
       </p>
 
-      <a class="btn phone-number-mobile-view flex-column align-items-center justify-content-center">
+      <a href="tel:4087083144" #callUs class="btn phone-number-mobile-view flex-column align-items-center justify-content-center">
         <div class="flex align-items-center">
           <img src="assets/img/icon/phone-icon-for-link.svg" style="margin-right: 8px" alt="">
           <p class="mobile-view-call-us">
@@ -111,7 +114,7 @@
 
   </section>
 
-  <section id="howItWorks" class="how-it-works" *ngIf="false">
+  <section id="howItWorks" class="how-it-works animate__animated wow animate__fadeIn" *ngIf="false">
     <p class="title how-it-works-title" [translate]="'MAIN_HOW_IT_WORK.title'">
       How It Works
     </p>
@@ -163,7 +166,7 @@
     </ul>
   </section>
 
-  <section id="reasons" class="reasons">
+  <section id="reasons" class="reasons animate__animated wow animate__fadeIn">
     <p class="title reasons-title" [translate]="'MAIN_REASONS.title'">
       Several reasons to trust us
     </p>
@@ -233,7 +236,7 @@
     </ul>
   </section>
 
-  <section class="appliances">
+  <section class="appliances animate__animated wow animate__fadeIn">
     <p class="title appliances-title" [translate]="'MAIN_APPLIANCES.title'">
       Appliances we service
     </p>
@@ -256,6 +259,7 @@
       </li>
 
       <li class="appliance-card" (click)="goTo('dishwasher')">
+        <!--        <div class="appliance-card-inner"></div>-->
         <div class="appliance-card-img-wrapper">
           <img src="assets/img/icon/dishwasher.svg" alt="" class="appliance-img black">
           <img src="assets/img/icon/dishwasher-white.svg" alt="" class="appliance-img white">
@@ -340,7 +344,7 @@
 
   </section>
 
-  <section id="brand" class="brand">
+  <section id="brand" class="brand animate__animated wow animate__fadeIn">
 
     <p class="title brand-title" [translate]="'MAIN_BRAND.title'">
       Brand we service
@@ -357,7 +361,7 @@
     </ul>
   </section>
 
-  <section id="results" class="result">
+  <section id="results" class="result animate__animated wow animate__fadeIn">
     <p class="title result-title" [translate]="'MAIN_RESULTS.title'">
       Our Results
     </p>
@@ -381,116 +385,7 @@
 
   </section>
 
-  <!--  <section class="contact">-->
-
-  <!--    <div class="contact-wrapper custom-width">-->
-
-  <!--      <p class="title contact-title">Contacts</p>-->
-  <!--      <p class="contact-subtitle">We provide services THROUGHOUT los angeles country</p>-->
-
-  <!--      <div class="contact-content">-->
-
-  <!--        <div>-->
-  <!--          <form action="">-->
-  <!--            <input placeholder="Please Enter Your Name" type="text" class="input">-->
-  <!--            <input prefix="+1" mask="(000) 000 0000" placeholder="Please Enter Your Phone Number" type="text"-->
-  <!--                   class="input number-input">-->
-  <!--            <div class="input-group">-->
-  <!--              <input mask="d0/M0" placeholder="01/01" type="text" class="input">-->
-  <!--              <input mask="HH:m0SS" placeholder="00:00pm/am" pattern="{}" type="text" class="input">-->
-  <!--            </div>-->
-  <!--            <p class="time-select-note">-->
-  <!--              Please select Date and time in any format-->
-  <!--            </p>-->
-  <!--          </form>-->
-  <!--          <button class="btn submit-btn">-->
-  <!--            SEND-->
-  <!--          </button>-->
-  <!--        </div>-->
-
-  <!--        <ul class="contact-list-web">-->
-  <!--          <li class="contact-item contact-item-web flex align-items-center">-->
-  <!--            <img class="contact-item-img" src="assets/img/icon/web-location.svg" alt="">-->
-  <!--            <p class="contact-item-text" [translate]="'MAIN.address'">101 Independence Avenue, S.E. Washington, D.C.-->
-  <!--              20559-6000</p>-->
-  <!--          </li>-->
-
-  <!--          <li class="contact-item contact-item-web flex align-items-center">-->
-  <!--            <img class="contact-item-img" src="assets/img/icon/web-phone.svg" alt="">-->
-  <!--            <p class="contact-item-text" [translate]="'MAIN.phone_number'">(408) 708 31 44</p>-->
-  <!--          </li>-->
-
-  <!--          <li class="contact-item contact-item-web flex align-items-center">-->
-  <!--            <img class="contact-item-img" src="assets/img/icon/web-mail.svg" alt="">-->
-  <!--            <p class="contact-item-text" [translate]="'MAIN_FOOTER.email'">info@fundamental.com</p>-->
-  <!--          </li>-->
-
-  <!--          <li class="contact-item contact-item-web flex align-items-center">-->
-  <!--            <img class="contact-item-img" src="assets/img/icon/web-clock.svg" alt="">-->
-  <!--            <p class="contact-item-text" [translate]="'MAIN.work_time'">MON - FRI 8:00am - 7 00pm</p>-->
-  <!--          </li>-->
-  <!--        </ul>-->
-
-  <!--      </div>-->
-
-  <!--    </div>-->
-
-  <!--  </section>-->
-  <!--  <section class="contact">-->
-
-  <!--    <div class="contact-wrapper custom-width">-->
-
-  <!--      <p class="title contact-title">Contacts</p>-->
-  <!--      <p class="contact-subtitle">We provide services THROUGHOUT los angeles country</p>-->
-
-  <!--      <div class="contact-content">-->
-
-  <!--        <div>-->
-  <!--          <form action="">-->
-  <!--            <input placeholder="Please Enter Your Name" type="text" class="input">-->
-  <!--            <input prefix="+1" mask="(000) 000 0000" placeholder="Please Enter Your Phone Number" type="text"-->
-  <!--                   class="input number-input">-->
-  <!--            <div class="input-group">-->
-  <!--              <input style="grid-column: 1/-1" type="datetime-local" class="input">-->
-  <!--            </div>-->
-  <!--            <p class="time-select-note">-->
-  <!--              Please select Date and time in any format-->
-  <!--            </p>-->
-  <!--          </form>-->
-  <!--          <button class="btn submit-btn">-->
-  <!--            SEND-->
-  <!--          </button>-->
-  <!--        </div>-->
-
-  <!--        <ul class="contact-list-web">-->
-  <!--          <li class="contact-item contact-item-web flex align-items-center">-->
-  <!--            <img class="contact-item-img" src="assets/img/icon/web-location.svg" alt="">-->
-  <!--            <p class="contact-item-text" [translate]="'MAIN.address'">101 Independence Avenue, S.E. Washington, D.C.-->
-  <!--              20559-6000</p>-->
-  <!--          </li>-->
-
-  <!--          <li class="contact-item contact-item-web flex align-items-center">-->
-  <!--            <img class="contact-item-img" src="assets/img/icon/web-phone.svg" alt="">-->
-  <!--            <p class="contact-item-text" [translate]="'MAIN.phone_number'">(408) 708 31 44</p>-->
-  <!--          </li>-->
-
-  <!--          <li class="contact-item contact-item-web flex align-items-center">-->
-  <!--            <img class="contact-item-img" src="assets/img/icon/web-mail.svg" alt="">-->
-  <!--            <p class="contact-item-text" [translate]="'MAIN_FOOTER.email'">info@fundamental.com</p>-->
-  <!--          </li>-->
-
-  <!--          <li class="contact-item contact-item-web flex align-items-center">-->
-  <!--            <img class="contact-item-img" src="assets/img/icon/web-clock.svg" alt="">-->
-  <!--            <p class="contact-item-text" [translate]="'MAIN.work_time'">MON - FRI 8:00am - 7 00pm</p>-->
-  <!--          </li>-->
-  <!--        </ul>-->
-
-  <!--      </div>-->
-
-  <!--    </div>-->
-
-  <!--  </section>-->
-  <section id="contactSection" class="contact">
+  <section id="contactSection" class="contact animate__animated wow animate__fadeIn">
 
     <div class="contact-wrapper custom-width">
 
@@ -520,7 +415,7 @@
         <ul class="contact-list-web">
           <li class="contact-item contact-item-web flex align-items-center">
             <img class="contact-item-img" src="assets/img/icon/web-location.svg" alt="">
-            <p class="contact-item-text" [translate]="'MAIN.address'">101 Independence Avenue, S.E. Washington, D.C.
+            <p class="contact-item-text">101 Independence Avenue, S.E. Washington, D.C.
               20559-6000</p>
           </li>
 
@@ -546,8 +441,7 @@
 
   </section>
 
-
-  <footer class="main-footer">
+  <footer class="main-footer animate__animated wow animate__fadeIn">
 
     <div class="flex footer-top align-items-center justify-content-between custom-width">
 
@@ -616,6 +510,9 @@
 
 
     <div class="firma">
+      <button class="top-arrow" (click)="goTop()">
+        <img class="top-arrow-img" src="assets/img/icon/to-top-arrow.svg" alt="">
+      </button>
       <p class="firma-text">
         © Copyright - Fundamental Appliance Repair. 2020
       </p>

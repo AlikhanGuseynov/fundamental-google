@@ -201,6 +201,7 @@ app-mobile-nav-menu {
 
 .phone-number-mobile-view {
   display: none;
+  text-decoration: none;
 }
 
 .work-time {
@@ -367,6 +368,16 @@ app-mobile-nav-menu {
   margin-bottom: 18px;
 }
 
+.appliance-card-inner {
+  width: 80%;
+  height: 100%;
+  position: absolute;
+  top: 10px;
+  z-index: 25;
+  opacity: 0.1;
+  border-radius: 15px;
+}
+
 .appliance-card {
   border: 1.5px solid #EFEFEF;
   border-radius: 15px;
@@ -374,6 +385,11 @@ app-mobile-nav-menu {
   width: 120px;
   cursor: pointer;
   margin: 0 auto;
+  position: relative;
+  z-index: 50;
+  background: #fff;
+  transition: box-shadow 100ms ease-in-out;
+  box-sizing: border-box;
 
   .white {
     display: none;
@@ -381,6 +397,8 @@ app-mobile-nav-menu {
 
   &:hover {
     background: linear-gradient(327.46deg, #54AAD9 -144.44%, #45B585 158.83%);
+    box-shadow: 0 10px 20px #54AAD9;
+    border: none;
 
     .white {
       display: block;
@@ -624,6 +642,7 @@ app-mobile-nav-menu {
 .firma {
   background: #313746;
   padding: 11px 0;
+  position: relative;
 }
 
 .firma-text {
@@ -631,6 +650,8 @@ app-mobile-nav-menu {
   line-height: 15px;
   text-align: center;
   color: #6B717D;
+  position: relative;
+  z-index: 50;
 }
 
 .custom-width {
@@ -722,7 +743,6 @@ app-mobile-nav-menu {
     grid-template-columns: 1fr;
     flex-wrap: wrap;
     margin-bottom: 25px !important;
-    margin-left: 50px !important;
   }
   .love-us-container {
     border-bottom: 2px solid #303746;
@@ -737,8 +757,6 @@ app-mobile-nav-menu {
     margin-bottom: 27px;
   }
   .mobile-view-contacts {
-    margin-left: 20px;
-
     .contact-item-text {
       font-size: 12px;
       line-height: 145%;
@@ -760,7 +778,30 @@ app-mobile-nav-menu {
   }
 }
 
+.top-arrow {
+  display: none;
+}
+
 @media (max-width: 576px) {
+
+  .top-arrow {
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 20px 0 0 0;
+    border: none;
+    top: -24px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    z-index: 20;
+    background: #313746;
+  }
+  .top-arrow-img {
+    width: 20px;
+    transform: rotate(-45deg);
+    margin-left: -6px;
+  }
   .our-services-list {
     height: 150px;
     overflow: hidden;
@@ -1096,6 +1137,14 @@ app-mobile-nav-menu {
     width: 66px;
     margin-left: auto;
     margin-right: 12px;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+    pointer-events: none;
+
+    &.active {
+      opacity: 1;
+      pointer-events: unset;
+    }
   }
   .mob-header-call {
     background-color: #fff;

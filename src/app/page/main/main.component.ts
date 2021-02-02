@@ -10,10 +10,9 @@ import {log} from 'util';
 })
 export class MainComponent implements OnInit {
 
-  // @ViewChild('phoneNumberBtn') phoneNumberBtn: ElementRef;
-  @ViewChild('otherHeader') otherHeader: ElementRef;
-  @ViewChild('bookAppointmentMain') bookAppointmentMain: ElementRef;
-  // @ViewChild('bookHeader') bookHeader: ElementRef;
+  @ViewChild('callBtn') callBtn: ElementRef;
+  @ViewChild('callUs') callUs: ElementRef;
+
   name = '';
   mobile = '';
   time: any;
@@ -70,24 +69,17 @@ export class MainComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event']) scroll(event): void {
     const verticalOffset = window.pageYOffset;
-    // const elPhoneNumber = this.phoneNumberBtn.nativeElement.offsetTop;
-    const elBookHeader = this.bookAppointmentMain.nativeElement.offsetTop;
-
-    // if (verticalOffset > elPhoneNumber) {
-    //   this.otherHeader.nativeElement.classList.add('active');
-    // } else {
-    //   this.otherHeader.nativeElement.classList.remove('active');
-    // }
-
-    if (verticalOffset > elBookHeader) {
-      // this.bookHeader.nativeElement.classList.add('active');
+    const callUs = this.callUs.nativeElement.offsetTop;
+    if (verticalOffset > callUs) {
+      this.callBtn.nativeElement.classList.add('active');
     } else {
-      // this.bookHeader.nativeElement.classList.remove('active');
+      this.callBtn.nativeElement.classList.remove('active');
     }
 
   }
 
-  goTo(type?: string): void {
+  goTo(type?: string): boolean {
+    return false;
     if (type === 'refrigerator' || type === 'washer' || type === 'drier' || type === 'oven') {
       this.router.navigate(['product-next', type]);
     } else {
@@ -142,6 +134,13 @@ export class MainComponent implements OnInit {
     const termsTitle = document.getElementById(id).offsetTop;
     window.scroll({
       top: termsTitle - 54,
+      behavior: 'smooth'
+    });
+  }
+
+  goTop(): void {
+    window.scroll({
+      top: 0,
       behavior: 'smooth'
     });
   }
